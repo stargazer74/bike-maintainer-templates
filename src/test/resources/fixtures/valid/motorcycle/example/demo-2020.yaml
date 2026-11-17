@@ -1,0 +1,43 @@
+# Test fixture: an example template that passes all checks (not part of the catalog; values made up).
+id: example-demo-2020
+type: MOTORCYCLE
+make: Example
+model: Demo 700
+aliases: [Demo700]
+years: { from: 2020, to: 2023 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: Example Demo 700 owner's manual 2020, maintenance schedule
+    url: https://example.com/demo700/manual.pdf
+    locator: p. 80
+    retrieved: 2026-11-01
+  - id: forum-a
+    kind: FORUM
+    title: Demo forum thread
+    url: https://forum-a.example.org/t/1
+    retrieved: 2026-11-01
+  - id: dealer
+    kind: DEALER
+    title: Demo dealer service page
+    url: https://dealer.example.net/demo
+    retrieved: 2026-11-01
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+    details:
+      - { label: oil, value: "10W-40", quantity: "3,0 l", sources: [manual] }
+  - key: valve-clearance
+    intervalKm: 40000
+    sources: [forum-a, dealer]
+  - key: inspection
+    oneTime: true
+    firstDueKm: 1000
+    sources: [manual]
+notes:
+  de: Beispiel.
+  en: Example.

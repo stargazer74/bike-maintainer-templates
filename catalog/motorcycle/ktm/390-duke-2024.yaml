@@ -1,0 +1,73 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: ktm-390-duke-2024
+type: MOTORCYCLE
+make: KTM
+model: 390 Duke
+aliases: [390Duke, Duke 390]
+years: { from: 2024, to: 2024 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: KTM Owner's Manual 390 DUKE 2024, Art. no. 3214960en (© 2023 KTM Sportmotorcycle GmbH), copy hosted by a KTM dealer
+    url: https://www.ktmshop.se/bike-manuals/24_3214960_en_OM.pdf
+    locator: Service schedule p. 62–63; Technical specifications p. 110, 112; Substances p. 119
+    retrieved: 2026-11-17
+  - id: service-times
+    kind: MANUFACTURER
+    title: KTM Service times Street, as of August 2024 (390 DUKE model year 2024)
+    url: https://www.ktm.com/language-masters/en/service/servicetimes/2024/KTM%20SERVICE%20TIMES.pdf
+    locator: 390 DUKE, model year 2024 (intervals 1,000 km, 10,000 km, 20,000 km, 12/24/48 months)
+    retrieved: 2026-11-17
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+    details:
+      - { label: oil, value: "SAE 15W-50, JASO T903 MA2, teilsynthetisch", quantity: "1,5 l", sources: [manual] }
+  - key: oil-filter
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+  - key: air-filter
+    intervalKm: 10000
+    sources: [manual]
+  - key: valve-clearance
+    intervalKm: 20000
+    sources: [manual]
+  - key: spark-plugs
+    intervalKm: 20000
+    sources: [manual]
+    details:
+      - { label: spark-plug, value: BOSCH VR6NEU, sources: [manual] }
+      - { label: electrode-gap, value: "1 mm", sources: [manual] }
+  - key: brake-fluid
+    intervalMonths: 24
+    sources: [manual]
+  - key: coolant
+    intervalMonths: 48
+    sources: [manual]
+    details:
+      - { label: coolant, value: "silikatfrei, Frostschutz bis mindestens −25 °C", quantity: "1 l", sources: [manual] }
+  - key: drive-chain-check
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+    details:
+      - { label: chain-slack, value: "5–7 mm (Kettenspannung)", sources: [manual] }
+  - key: steering-head-bearing
+    intervalKm: 10000
+    firstDueKm: 1000
+    sources: [manual]
+  - key: inspection
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual, service-times]
+notes:
+  de: Ölwechsel mit Ölfilter und Reinigung der Ölsiebe. Ventilspiel prüfen und Zündkerze wechseln alle 20.000 km.
+  en: Oil change with oil filter and cleaning of the oil screens. Check valve clearance and change the spark plug every 20,000 km.

@@ -1,0 +1,64 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: bmw-r1300-gs-2023
+type: MOTORCYCLE
+make: BMW
+model: R 1300 GS
+aliases: [R1300GS, R 1300GS, GS 1300]
+years: { from: 2023, to: 2024 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: BMW Motorrad Betriebsanleitung R 1300 GS, © 2023 (R_0M21_RM_0223_00, Deutsch)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0M21_RM_0223_00.pdf
+    locator: Wartungsplan S. 283; Wartungsarbeiten S. 282; Technische Daten S. 269, 271, 275
+    retrieved: 2026-11-17
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [manual]
+    details:
+      - { label: oil, value: "SAE 5W-40, API SL / JASO MA2, keine Additive (z. B. Molybdän)", quantity: "max. 5,0 l mit Filterwechsel", sources: [manual] }
+  - key: oil-filter
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [manual]
+  - key: final-drive-oil
+    intervalKm: 20000
+    intervalMonths: 24
+    firstDueKm: 1200
+    sources: [manual]
+    details:
+      - { label: oil, value: SAE 70W-80, sources: [manual] }
+  - key: valve-clearance
+    intervalKm: 20000
+    sources: [manual]
+  - key: spark-plugs
+    intervalKm: 20000
+    sources: [manual]
+    details:
+      - { label: spark-plug, value: NGK LMAR8AI-10, sources: [manual] }
+  - key: air-filter
+    intervalKm: 20000
+    sources: [manual]
+  - key: drive-shaft-check
+    intervalKm: 20000
+    sources: [manual]
+  - key: drive-shaft
+    intervalKm: 80000
+    sources: [manual]
+  - key: brake-fluid
+    intervalMonths: 24
+    firstDueMonths: 12
+    sources: [manual]
+  - key: inspection
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [manual]
+notes:
+  de: Die Einfahrkontrolle mit Öl- und Ölfilterwechsel ist zwischen 500 und 1.200 km fällig. Bremsflüssigkeit erstmals nach einem Jahr, dann alle zwei Jahre. Die Kardanwelle wird nach 80.000 km Laufleistung des Bauteils ersetzt.
+  en: The running-in check with oil and oil filter change is due between 500 and 1,200 km. Brake fluid first after one year, then every two years. The drive shaft is replaced after 80,000 km of the part's mileage.
