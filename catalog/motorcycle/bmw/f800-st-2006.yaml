@@ -1,0 +1,60 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: bmw-f800-st-2006
+type: MOTORCYCLE
+make: BMW
+model: F 800 ST
+aliases: [F800ST, F 800ST, F800 ST]
+years: { from: 2006, to: 2012 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: BMW Motorrad Betriebsanleitung F 800 ST, 08.2011, 6. Auflage (F_0234_RM_0811_F800ST_00, Deutsch)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/F_0234_RM_0811_F800ST_00.pdf
+    locator: Wartungsarbeiten S. 131; Technische Daten S. 120, 125
+    retrieved: 2026-11-18
+  - id: manual-2006
+    kind: MANUFACTURER
+    title: BMW Motorrad Bedienungsanleitung F 800 ST, 02.2006, 1. Auflage (F_0234_RM_0206_F800ST_00, Deutsch)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/F_0234_RM_0206_F800ST_00.pdf
+    locator: Wartungsarbeiten S. 129–130
+    retrieved: 2026-11-18
+  - id: hornig
+    kind: DEALER
+    title: Hornig, Maintenance intervals / Service for BMW F800S, F800ST & F800GT (Arbeiten je Service)
+    url: https://www.motorcycleparts-hornig.com/BMW-F-800-S-ST-and-GT/Maintenance-interval-service/
+    locator: Running-in Check 1.000 km; 10.000 km service (30.000/50.000 km); 20.000 km service (40.000/60.000 km); Technical data (F800ST 2006-2012)
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [hornig, manual]
+    details:
+      - { label: oil, value: "SAE 15W-40 (ab −10 °C) oder SAE 10W-40 (ab −20 °C), API SG / SH / JASO MA, keine Ölzusätze", quantity: "3 l mit Filterwechsel", sources: [manual] }
+  - key: oil-filter
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [hornig, manual]
+  - key: valve-clearance
+    intervalKm: 20000
+    sources: [hornig]
+  - key: spark-plugs
+    intervalKm: 20000
+    sources: [hornig]
+    details:
+      - { label: spark-plug, value: NGK DCPR 8 E, sources: [manual] }
+      - { label: electrode-gap, value: "0,8–0,9 mm (neu)", sources: [manual] }
+  - key: air-filter
+    intervalKm: 20000
+    sources: [hornig]
+  - key: inspection
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [manual-2006, manual, hornig]
+notes:
+  de: Die Einfahrkontrolle mit Öl- und Ölfilterwechsel ist zwischen 500 und 1.200 km fällig. Die Auflage 2006 nennt eine Jahresinspektion, den Pflegedienst nach 10.000 km und dann alle 20.000 km sowie die Inspektion alle 20.000 km, also alle 10.000 km oder jährlich einen Service; in der Auflage 2011 heißt es nur noch BMW Service einmal jährlich, bei hoher Laufleistung mit Höchst-Kilometerstand. Die Einzelarbeiten (Ventilspiel, Zündkerzen, Luftfilter beim 20.000-km-Service) stammen vom Händler Hornig. Zahnriemen und Ruckdämpfer laut Hornig alle 40.000 km ersetzen.
+  en: The running-in check with oil and oil filter change is due between 500 and 1,200 km. The 2006 edition lists an annual inspection, the care service after 10,000 km and then every 20,000 km, and the inspection every 20,000 km, i.e. a service every 10,000 km or yearly; the 2011 edition only says BMW service once a year, with a maximum odometer reading for high-mileage riders. The individual jobs (valve clearance, spark plugs, air filter at the 20,000 km service) come from the dealer Hornig. According to Hornig the drive belt and cush drive are replaced every 40,000 km.

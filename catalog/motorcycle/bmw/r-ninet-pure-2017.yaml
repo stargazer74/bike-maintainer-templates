@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: bmw-r-ninet-pure-2017
+type: MOTORCYCLE
+make: BMW
+model: R nineT Pure
+aliases: [R nine T Pure, RnineT Pure, R9T Pure]
+years: { from: 2017, to: 2020 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: BMW Motorrad Betriebsanleitung R nineT Pure, 02.2019, 4. Auflage (R_0J11_RM_0219_00, Deutsch)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0J11_RM_0219_00.pdf
+    locator: Wartungsplan S. 154–155; BMW Service S. 153; Technische Daten S. 139, 141, 147; Bremsflüssigkeit S. 96
+    retrieved: 2026-11-18
+  - id: manual-first
+    kind: MANUFACTURER
+    title: BMW Motorrad Betriebsanleitung R nineT Pure, 10.2016, 1. Auflage (R_0J11_RM_1016_00, Deutsch)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0J11_RM_1016_00.pdf
+    locator: Wartungsplan S. 136–137; Technische Daten S. 130
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [manual]
+    details:
+      - { label: oil, value: "SAE 15W-50, API SJ / JASO MA2, keine Additive (z. B. Molybdän)", quantity: "ca. 3,95 l mit Filterwechsel", sources: [manual] }
+  - key: oil-filter
+    intervalKm: 10000
+    intervalMonths: 12
+    sources: [manual]
+  - key: final-drive-oil
+    intervalKm: 20000
+    intervalMonths: 24
+    sources: [manual]
+    details:
+      - { label: oil, value: "SAE 70W-80 / Hypoid Axle G3", sources: [manual] }
+  - key: gear-oil
+    intervalKm: 40000
+    intervalMonths: 24
+    firstDueMonths: 12
+    sources: [manual]
+  - key: valve-clearance
+    intervalKm: 10000
+    sources: [manual]
+  - key: spark-plugs
+    intervalKm: 20000
+    sources: [manual]
+    details:
+      - { label: spark-plug, value: NGK MAR8B-JDS, sources: [manual] }
+      - { label: electrode-gap, value: "0,8 mm", sources: [manual-first] }
+  - key: air-filter
+    intervalKm: 20000
+    sources: [manual]
+  - key: throttle-body-sync
+    intervalKm: 10000
+    sources: [manual]
+  - key: brake-fluid
+    intervalMonths: 24
+    firstDueMonths: 12
+    sources: [manual]
+    details:
+      - { label: fluid, value: DOT4, sources: [manual] }
+  - key: inspection
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [manual]
+notes:
+  de: Die Einfahrkontrolle mit Ölwechsel ist zwischen 500 und 1.200 km fällig. Bremsflüssigkeit erstmals nach einem Jahr, dann alle zwei Jahre. Getriebeöl erstmals nach einem Jahr, dann alle zwei Jahre oder alle 40.000 km. Der BMW Service ist jährlich fällig. Der Riemen des Generators wird laut Wartungsplan alle 40.000 km oder sechs Jahre ersetzt (im Katalog noch ohne eigene Aufgabe).
+  en: The running-in check with oil change is due between 500 and 1,200 km. Brake fluid first after one year, then every two years. Gearbox oil first after one year, then every two years or every 40,000 km. The BMW Service is due once a year. The schedule also replaces the alternator belt every 40,000 km or six years (no catalog task for it yet).

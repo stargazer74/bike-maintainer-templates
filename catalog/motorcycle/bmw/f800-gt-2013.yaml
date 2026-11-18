@@ -1,0 +1,51 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: bmw-f800-gt-2013
+type: MOTORCYCLE
+make: BMW
+model: F 800 GT
+aliases: [F800GT, F 800GT, F800 GT]
+years: { from: 2013, to: 2019 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: BMW Motorrad Betriebsanleitung F 800 GT, 08.2015, 4. Auflage (F_0B03_RM_0815_00, Deutsch)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/F_0B03_RM_0815_00.pdf
+    locator: Wartungsplan S. 148–149; Standard BMW Service S. 150; Wartungsarbeiten S. 147; Technische Daten S. 135, 140; Bremsflüssigkeit S. 93
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    intervalMonths: 12
+    sources: [manual]
+    details:
+      - { label: oil, value: "SAE 15W-50, API SJ / JASO MA2, keine Additive (z. B. Molybdän)", quantity: "ca. 3,0 l mit Filterwechsel", sources: [manual] }
+  - key: oil-filter
+    intervalKm: 10000
+    intervalMonths: 12
+    sources: [manual]
+  - key: valve-clearance
+    intervalKm: 20000
+    sources: [manual]
+  - key: spark-plugs
+    intervalKm: 40000
+    sources: [manual]
+    details:
+      - { label: spark-plug, value: NGK DCPR 8 E, sources: [manual] }
+      - { label: electrode-gap, value: "0,8–0,9 mm (neu)", sources: [manual] }
+  - key: air-filter
+    intervalKm: 20000
+    sources: [manual]
+  - key: brake-fluid
+    intervalMonths: 24
+    firstDueMonths: 12
+    sources: [manual]
+    details:
+      - { label: fluid, value: DOT4, sources: [manual] }
+  - key: inspection
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [manual]
+notes:
+  de: Die Einfahrkontrolle ist zwischen 500 und 1.200 km fällig; der Wartungsplan sieht dort keinen Ölwechsel vor. Der Standard-BMW-Service ist jährlich, Öl und Ölfilter jährlich oder alle 10.000 km (was zuerst eintritt). Bremsflüssigkeit erstmals nach einem Jahr, dann alle zwei Jahre. Zahnriemen und hinterer Ruckdämpfer werden alle 40.000 km ersetzt, Riemenrad, Riemenritzel und Ritzel-Ruckdämpfer alle 40.000 km geprüft; Zahnriemen und Riemenspannung werden beim jährlichen Service geprüft.
+  en: The running-in check is due between 500 and 1,200 km; the schedule lists no oil change there. The standard BMW service is yearly, oil and oil filter yearly or every 10,000 km (whichever comes first). Brake fluid first after one year, then every two years. The drive belt and rear cush drive are replaced every 40,000 km, the belt pulley, belt sprocket and sprocket cush drive are checked every 40,000 km; belt condition and tension are checked at the yearly service.

@@ -1,0 +1,86 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: bmw-r1150-gs-2003
+type: MOTORCYCLE
+make: BMW
+model: R 1150 GS
+aliases: [R1150GS, R 1150GS, GS 1150, R 1150 GS Adventure, R1150GS Adventure, R1150GSA]
+years: { from: 2003, to: 2005 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: BMW Motorrad Bordliteratur R 1150 GS / R 1150 GS Adventure, Maintenance Instructions, Ausgabe 11/2002 (R_0441_ST_1002_R1150GS_R1150Adv_01, Englisch)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0441_ST_1002_R1150GS_R1150Adv_01.pdf
+    locator: Wartungsarbeiten S. 3; Wartungsplan S. 4-6 mit Fußnoten; Technische Daten S. 74 (Motoröl), 75 (Getriebe/Hinterradantrieb), 76 (Bremsflüssigkeit), 77 (Zündkerzen)
+    retrieved: 2026-11-18
+  - id: wa2004
+    kind: MANUFACTURER
+    title: BMW Motorrad Maintenance Instructions R 1150 GS / R 1150 GS Adventure, Ausgabe 2004 (R_0441_WA_0804_R1150GS_R1150Adv_01, Englisch)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0441_WA_0804_R1150GS_R1150Adv_01.pdf
+    locator: Wartungsarbeiten S. 3; Technische Daten S. 67 (Motoröl), 68 (Getriebe/Hinterradantrieb), 70 (Zündkerzen)
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+    details:
+      - { label: oil, value: "HD-Markenöl API SF/SG/SH (CD/CE zulässig) oder CCMC G4/G5; SAE-Klasse nach Außentemperatur", quantity: "3,75 l mit Filterwechsel (3,50 l ohne)", sources: [manual, wa2004] }
+  - key: oil-filter
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+  - key: gear-oil
+    intervalKm: 20000
+    intervalMonths: 24
+    sources: [manual]
+    details:
+      - { label: oil, value: "Hypoid-Getriebeöl API GL 5, EPX 90 oder SAE 90", quantity: "ca. 1,0 l", sources: [manual, wa2004] }
+  - key: final-drive-oil
+    intervalKm: 40000
+    intervalMonths: 24
+    firstDueKm: 1000
+    sources: [manual]
+    details:
+      - { label: oil, value: "Hypoid-Getriebeöl API GL 5, EPX 90 oder SAE 90", quantity: "ca. 0,25 l", sources: [manual, wa2004] }
+  - key: valve-clearance
+    intervalKm: 10000
+    firstDueKm: 1000
+    sources: [manual]
+  - key: throttle-body-sync
+    intervalKm: 10000
+    firstDueKm: 1000
+    sources: [manual]
+  - key: spark-plugs
+    intervalKm: 40000
+    sources: [manual]
+    details:
+      - { label: spark-plug, value: "Hauptkerze NGK BKR 7 EKC; Nebenkerze Bosch YR6LDE oder NGK DCPR 8 EKC", sources: [manual, wa2004] }
+      - { label: electrode-gap, value: "0,8 mm", sources: [manual, wa2004] }
+  - key: air-filter
+    intervalKm: 10000
+    sources: [manual]
+  - key: fuel-filter
+    intervalKm: 40000
+    sources: [manual]
+  - key: brake-pads-check
+    intervalKm: 10000
+    sources: [manual]
+  - key: brake-fluid
+    intervalMonths: 12
+    sources: [manual]
+    details:
+      - { label: fluid, value: DOT 4, sources: [manual] }
+  - key: clutch-fluid
+    intervalMonths: 24
+    sources: [manual]
+  - key: inspection
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual, wa2004]
+notes:
+  de: Einfahrkontrolle nach 1.000 km. Danach abwechselnd BMW Service (10.000, 30.000, 50.000 km …) und BMW Inspektion (20.000, 40.000 km …), dazu jährlich der Jahresservice. Bei Kurzstrecke oder Frost Öl und Filter spätestens alle 3 Monate bzw. 3.000 km. Kraftstofffilter bei schlechter Kraftstoffqualität alle 20.000 km, Luftfilter bei viel Staub öfter. Mit Integral-ABS Bremsflüssigkeit im Radkreis jährlich, im Steuerkreis alle zwei Jahre. Der Keilrippenriemen (Lichtmaschine) wird alle 60.000 km ersetzt. Für die Ventilspielwerte der Doppelzündungs-Modelle fehlt noch eine Quelle.
+  en: Running-in check after 1,000 km. Then BMW Service (10,000, 30,000, 50,000 km …) alternates with BMW Inspection (20,000, 40,000 km …), plus a yearly Annual Service. For short trips or frost, change oil and filter every 3 months or 3,000 km at the latest. Fuel filter every 20,000 km with poor fuel, air filter more often in dusty conditions. With Integral ABS, brake fluid in the wheel circuit yearly, in the control circuit every two years. The poly-V (alternator) belt is replaced every 60,000 km. A source for the valve clearance values of the twin-spark models is still missing.
