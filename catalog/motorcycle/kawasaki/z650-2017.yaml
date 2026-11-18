@@ -1,0 +1,96 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-z650-2017
+type: MOTORCYCLE
+make: Kawasaki
+model: Z650
+aliases: [Z 650, ER650H, Z650 ABS]
+years: { from: 2017, to: 2019 }
+market: EU
+sources:
+  - id: manual-2017
+    kind: MANUFACTURER
+    title: Kawasaki Z650 ABS (ER650HHF, 2017) Owner's Manual, EU edition, English (99976-0019-01), official Kawasaki manual viewer (KTIVS)
+    url: https://pws.ktivs.net/dispeBook?file=99976-0019&lang_code=EN
+    locator: Periodic Maintenance chart p. 93–97; Specifications p. 22–24; Engine Oil Capacity p. 101; Coolant p. 104; Drive Chain Slack p. 111
+    retrieved: 2026-11-18
+  - id: manual-2019
+    kind: MANUFACTURER
+    title: Kawasaki Z650 ABS (ER650HKF, 2019) Owner's Manual, EU edition, English (99976-0173), official Kawasaki manual viewer (KTIVS)
+    url: https://pws.ktivs.net/dispeBook?file=99976-0173&lang_code=EN
+    locator: Periodic Maintenance chart p. 92–96; Specifications p. 23–24; Engine Oil Capacity p. 100; Coolant p. 103; Drive Chain Slack p. 110
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual-2017, manual-2019]
+    details:
+      - { label: oil, value: "SAE 10W-40, API SG/SH/SJ/SL/SM, JASO MA/MA1/MA2", quantity: "1,8 l mit Filterwechsel", sources: [manual-2017, manual-2019] }
+  - key: oil-filter
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual-2017, manual-2019]
+  - key: air-filter
+    intervalKm: 18000
+    sources: [manual-2017, manual-2019]
+  - key: spark-plugs
+    intervalKm: 12000
+    sources: [manual-2017, manual-2019]
+    details:
+      - { label: spark-plug, value: NGK CR9EIA-9, sources: [manual-2017, manual-2019] }
+      - { label: electrode-gap, value: "0,8–0,9 mm", sources: [manual-2017, manual-2019] }
+  - key: valve-clearance
+    intervalKm: 42000
+    sources: [manual-2017, manual-2019]
+  - key: throttle-body-sync
+    intervalKm: 12000
+    sources: [manual-2017, manual-2019]
+  - key: fuel-filter
+    intervalKm: 24000
+    sources: [manual-2017, manual-2019]
+  - key: coolant
+    intervalKm: 36000
+    intervalMonths: 36
+    sources: [manual-2017, manual-2019]
+    details:
+      - { label: coolant, value: "Permanentes Frostschutzmittel (Ethylenglykol mit Korrosionsschutz für Aluminiummotoren), ab Werk 50 % gemischt", quantity: "1,2 l", sources: [manual-2017, manual-2019] }
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [manual-2017, manual-2019]
+    details:
+      - { label: fluid, value: DOT 4, sources: [manual-2017, manual-2019] }
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [manual-2017, manual-2019]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [manual-2017, manual-2019]
+    details:
+      - { label: chain-slack, value: "20–30 mm", sources: [manual-2017, manual-2019] }
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [manual-2017, manual-2019]
+  - key: steering-head-bearing
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual-2017, manual-2019]
+  - key: inspection
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual-2017, manual-2019]
+notes:
+  de: >-
+    EU-Ausgaben 2017 (ER650HHF) und 2019 (ER650HKF) mit gleichem Plan; eine eigene EU-Ausgabe für 2018 (ER650HJF) war im Kawasaki-Viewer nicht zu finden; die US-Ausgaben 2018 und 2019 haben denselben Plan. Kette: Schmierzustand alle 600 km, Durchhang alle 1.000 km prüfen,
+    Verschleiß alle 12.000 km. Lenkkopflager: Spiel alle 12.000 km bzw. jährlich prüfen, Lager alle 24.000 km bzw. alle
+    2 Jahre schmieren. Kraftstoffschläuche alle 5 Jahre, Bremsschläuche alle 4 Jahre, Gummiteile der Bremse alle 4 Jahre
+    bzw. 48.000 km erneuern. Ventilspiel-Sollwerte nennt das Fahrerhandbuch nicht.
+  en: >-
+    EU editions 2017 (ER650HHF) and 2019 (ER650HKF) share the same schedule; no separate EU edition for 2018 (ER650HJF) was found in the Kawasaki viewer; the US editions 2018 and 2019 have the same schedule. Chain: check lubrication every 600 km, slack every 1,000 km,
+    wear every 12,000 km. Steering head: check play every 12,000 km or yearly, grease the bearings every 24,000 km or
+    every 2 years. Replace fuel hoses every 5 years, brake hoses every 4 years, brake rubber parts every 4 years or
+    48,000 km. The owner's manual does not give valve clearance values.

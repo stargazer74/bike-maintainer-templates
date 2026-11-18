@@ -23,7 +23,9 @@ eclipse-temurin:25-jdk ./mvnw -Dmaven.repo.local=/tmp/.m2/repository verify`.
 - **Never invent a value.** Every task and detail cites a source that actually states it. If no source is reachable,
   leave the task or the whole model out and say so in the PR. Do not "fill in typical values".
 - **Manufacturer first.** `MANUFACTURER` sources (owner's manual, service booklet, official site) over anything else;
-  `FORUM` only together with an independent second source from another site.
+  `FORUM` only together with an independent second source from another site. Prefer the European edition; another
+  market's edition (US, AU …) is fine if its schedule is in km – name the market in the source title and leave out
+  items that only apply there (e.g. Californian emission parts).
 - **Locator:** page number or section in the manual, so a reviewer finds the value quickly.
 - **One file per model and year range.** The range covers every model year the source applies to (cover, type
   designation, facelift information), not just the year of the manual you found; the file name carries the first

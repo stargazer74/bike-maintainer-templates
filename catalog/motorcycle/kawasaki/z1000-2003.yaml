@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-z1000-2003
+type: MOTORCYCLE
+make: Kawasaki
+model: Z1000
+aliases: [Z 1000, ZR1000, ZR1000A]
+years: { from: 2003, to: 2005 }
+market: EU
+sources:
+  - id: om2003
+    kind: MANUFACTURER
+    title: Kawasaki Z1000 (ZR1000A) Owner's Manual, EU edition (99976-1139, English; © 2003, printed Jan. 2004), Kawasaki online viewer
+    url: https://pws.ktivs.net/dispeBook?file=99976-1139&lang_code=EN
+    locator: Periodic Maintenance Chart p. 64–68; Specifications p. 11 (spark plug, oil); oil capacity p. 73; spark plug gap p. 79; chain slack p. 93
+    retrieved: 2026-11-18
+  - id: om2005
+    kind: MANUFACTURER
+    title: Kawasaki Z1000 (ZR1000A) Owner's Manual, EU edition (99976-1274, English; © 2005, printed June 2005), Kawasaki online viewer
+    url: https://pws.ktivs.net/dispeBook?file=99976-1274&lang_code=EN
+    locator: Periodic Maintenance Chart p. 68–71; oil capacity p. 76; spark plug gap p. 83; chain slack p. 97
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om2003, om2005]
+    details:
+      - { label: oil, value: "SAE 10W-40, API SE/SF/SG oder API SH/SJ mit JASO MA", quantity: "3,3 l mit Filterwechsel", sources: [om2003, om2005] }
+  - key: oil-filter
+    intervalKm: 12000
+    firstDueKm: 1000
+    sources: [om2003, om2005]
+  - key: valve-clearance
+    intervalKm: 24000
+    sources: [om2003, om2005]
+  - key: throttle-body-sync
+    intervalKm: 12000
+    sources: [om2003, om2005]
+  - key: coolant
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [om2003, om2005]
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [om2003, om2005]
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [om2003, om2005]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [om2003, om2005]
+    details:
+      - { label: chain-slack, value: "20–30 mm", sources: [om2003, om2005] }
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [om2003, om2005]
+  - key: steering-head-bearing
+    intervalKm: 6000
+    firstDueKm: 1000
+    sources: [om2003, om2005]
+  - key: inspection
+    intervalKm: 12000
+    firstDueKm: 1000
+    sources: [om2003, om2005]
+notes:
+  de: >-
+    Plan aus den EU-Handbüchern 2003/04 und 2005 (Tabelle gleich). Der Plan sieht keinen Wechsel von Luftfilter und
+    Zündkerzen vor: Luftfilter alle 12.000 km reinigen, Zündkerzen (NGK CR9EK oder ND U27ETR, Abstand 0,7–0,8 mm) alle
+    6.000 km reinigen und einstellen. Lenkung alle 6.000 km prüfen, Lenkkopflager alle 24.000 km bzw. 2 Jahre
+    schmieren; Bremszylinder-Manschetten alle 4 Jahre ersetzen. Ventilspiel-Sollwerte stehen nicht im Fahrerhandbuch.
+  en: >-
+    Schedule from the EU owner's manuals 2003/04 and 2005 (same chart). The chart has no replacement interval for the
+    air filter or spark plugs: clean the air filter every 12,000 km, clean and gap the spark plugs (NGK CR9EK or ND
+    U27ETR, gap 0.7–0.8 mm) every 6,000 km. Check the steering every 6,000 km and grease the steering stem bearing
+    every 24,000 km or 2 years; replace the brake cylinder seals every 4 years. Valve clearance specs are not in the
+    owner's manual.

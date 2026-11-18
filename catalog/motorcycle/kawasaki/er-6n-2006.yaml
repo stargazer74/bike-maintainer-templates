@@ -1,0 +1,94 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-er-6n-2006
+type: MOTORCYCLE
+make: Kawasaki
+model: ER-6n
+aliases: [ER6n, ER-6 n, ER 6n, ER-6n ABS, ER650A, ER650B]
+years: { from: 2006, to: 2008 }
+market: EU
+sources:
+  - id: om-2006
+    kind: MANUFACTURER
+    title: Kawasaki ER-6n (2006) Owner's Manual, EU edition, multilingual (99976-1249), official Kawasaki manual viewer (KTIVS)
+    url: https://pws.ktivs.net/dispeBook?file=99976-1249&lang_code=EN
+    locator: Periodic Maintenance Chart p. 66–74
+    retrieved: 2026-11-18
+  - id: om-2008
+    kind: MANUFACTURER
+    title: Kawasaki ER-6n / ER-6n ABS (2008) Owner's Manual, EU edition, EN/FR/DE (99976-1401), official Kawasaki manual viewer (KTIVS)
+    url: https://pws.ktivs.net/dispeBook?file=99976-1401&lang_code=EN
+    locator: Periodic Maintenance Chart p. 74–82; Engine Oil p. 87; Spark Plugs p. 95; Drive Chain Slack p. 106
+    retrieved: 2026-11-18
+  - id: sm-2006
+    kind: MANUFACTURER
+    title: Kawasaki ER-6n (ER650A6F/A6S) Service Manual, First Edition (1) Aug. 2005 (99924-1360-01), copy hosted by productreview.com.au
+    url: https://s.productreview.com.au/products/manuals/78799_56399de661c68.pdf
+    locator: Periodic Maintenance Chart p. 2-3–2-5; Specifications p. 2-11–2-12 (valve clearance, engine oil capacity, coolant, brake fluid)
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om-2006, om-2008]
+    details:
+      - { label: oil, value: "SAE 10W-40, API SE/SF/SG oder API SH/SJ/SL mit JASO MA", quantity: "1,9 l mit Filterwechsel", sources: [om-2008, sm-2006] }
+  - key: oil-filter
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om-2006, om-2008]
+  - key: air-filter
+    intervalMonths: 24
+    sources: [om-2006, om-2008]
+  - key: spark-plugs
+    intervalKm: 12000
+    sources: [om-2006, om-2008]
+    details:
+      - { label: spark-plug, value: "NGK CR9EIA-9", sources: [om-2008] }
+      - { label: electrode-gap, value: "0,8–0,9 mm", sources: [om-2008] }
+  - key: valve-clearance
+    intervalKm: 42000
+    sources: [om-2006, om-2008, sm-2006]
+    details:
+      - { label: clearance-intake, value: "0,15–0,21 mm", sources: [sm-2006] }
+      - { label: clearance-exhaust, value: "0,22–0,31 mm", sources: [sm-2006] }
+  - key: coolant
+    intervalKm: 36000
+    intervalMonths: 36
+    sources: [om-2006, om-2008]
+    details:
+      - { label: coolant, value: "Dauerfrostschutz, 1:1 mit weichem Wasser", quantity: "1,2 l", sources: [sm-2006] }
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [om-2006, om-2008]
+    details:
+      - { label: fluid, value: "DOT 4", sources: [sm-2006] }
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [om-2006, om-2008]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [om-2006, om-2008]
+    details:
+      - { label: chain-slack, value: "30–40 mm", sources: [om-2008] }
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [om-2006, om-2008]
+  - key: steering-head-bearing
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om-2006, om-2008]
+  - key: throttle-body-sync
+    intervalKm: 12000
+    sources: [om-2006, om-2008]
+  - key: inspection
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om-2006, om-2008]
+notes:
+  de: "Luftfiltereinsatz alle 12.000 km reinigen und alle 2 Jahre ersetzen (kein km-Intervall). Ventilspiel alle 42.000 km (EU). Bremsbeläge ab 6.000 km alle 6.000 km prüfen. Lenkkopflager alle 2 Jahre bzw. 24.000 km schmieren. Brems- und Kraftstoffschläuche alle 4 Jahre ersetzen."
+  en: "Clean the air filter element every 12,000 km and replace it every 2 years (no km interval). Valve clearance every 42,000 km (EU). Check brake pads every 6,000 km from 6,000 km. Lubricate the steering stem bearings every 2 years or 24,000 km. Replace brake and fuel hoses every 4 years."

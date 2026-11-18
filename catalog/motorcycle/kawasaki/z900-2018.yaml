@@ -1,0 +1,102 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-z900-2018
+type: MOTORCYCLE
+make: Kawasaki
+model: Z900
+aliases: [Z 900, ZR900, ZR900B, ZR900D, Z900 ABS, Z900 70 kW, Z900 A2]
+years: { from: 2018, to: 2019 }
+market: EU
+sources:
+  - id: eu2018
+    kind: MANUFACTURER
+    title: Kawasaki Z900 (ZR900BJF) Owner's Manual 2018, EU edition (99976-0191, English), Kawasaki online viewer
+    url: https://pws.ktivs.net/dispeBook?file=99976-0191&lang_code=EN
+    locator: Periodic Maintenance p. 99–103; General Information p. 23 (spark plug, oil, coolant capacity) and p. 24 (brake fluid); oil capacity p. 107; coolant p. 109; chain slack p. 115
+    retrieved: 2026-11-18
+  - id: eu2018d
+    kind: MANUFACTURER
+    title: Kawasaki Z900 70 kW (ZR900DJF) Owner's Manual 2018, EU edition (99976-0203, English), Kawasaki online viewer
+    url: https://pws.ktivs.net/dispeBook?file=99976-0203&lang_code=EN
+    locator: Periodic Maintenance p. 100–104
+    retrieved: 2026-11-18
+  - id: eu2019
+    kind: MANUFACTURER
+    title: Kawasaki Z900 (ZR900B/D, ZR900BKF) Owner's Manual 2019, EU edition (99976-0159, English), Kawasaki online viewer
+    url: https://pws.ktivs.net/dispeBook?file=99976-0159&lang_code=EN
+    locator: Periodic Maintenance p. 100–104; General Information p. 23 and p. 25; oil capacity p. 108; coolant p. 110; chain slack p. 116
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [eu2018, eu2018d, eu2019]
+    details:
+      - { label: oil, value: "SAE 10W-40, API SG/SH/SJ/SL/SM, JASO MA/MA1/MA2", quantity: "3,6 l mit Filterwechsel", sources: [eu2018, eu2019] }
+  - key: oil-filter
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [eu2018, eu2018d, eu2019]
+  - key: air-filter
+    intervalKm: 18000
+    sources: [eu2018, eu2018d, eu2019]
+  - key: spark-plugs
+    intervalKm: 12000
+    sources: [eu2018, eu2018d, eu2019]
+    details:
+      - { label: spark-plug, value: NGK CR9EIA-9, sources: [eu2018, eu2019] }
+      - { label: electrode-gap, value: "0,8–0,9 mm", sources: [eu2018, eu2019] }
+  - key: valve-clearance
+    intervalKm: 42000
+    sources: [eu2018, eu2018d, eu2019]
+  - key: throttle-body-sync
+    intervalKm: 12000
+    sources: [eu2018, eu2018d, eu2019]
+  - key: fuel-filter
+    intervalKm: 24000
+    sources: [eu2018, eu2018d, eu2019]
+  - key: coolant
+    intervalKm: 36000
+    intervalMonths: 36
+    sources: [eu2018, eu2018d, eu2019]
+    details:
+      - { label: coolant, value: "Permanent-Frostschutz (Ethylenglykol, für Alu-Motoren), ab Werk 50 %", quantity: "2,4 l", sources: [eu2018, eu2019] }
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [eu2018, eu2018d, eu2019]
+    details:
+      - { label: fluid, value: DOT 4, sources: [eu2018, eu2019] }
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [eu2018, eu2018d, eu2019]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [eu2018, eu2018d, eu2019]
+    details:
+      - { label: chain-slack, value: "25–35 mm", sources: [eu2018, eu2019] }
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [eu2018, eu2018d, eu2019]
+  - key: steering-head-bearing
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [eu2018, eu2018d, eu2019]
+  - key: inspection
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [eu2018, eu2018d, eu2019]
+notes:
+  de: >-
+    Plan aus den EU-Handbüchern 2018 und 2019, gilt auch für die 70-kW-Version ZR900D. Die US-Ausgaben nennen für das
+    Ventilspiel 24.000 km statt 42.000 km. Kette: Schmierzustand alle 600 km, Durchhang alle 1.000 km prüfen.
+    Lenkkopflager zusätzlich alle 24.000 km bzw. 2 Jahre schmieren, Kraftstoffschläuche alle 5 Jahre, Bremsschläuche
+    alle 4 Jahre ersetzen. Ventilspiel-Sollwerte stehen nicht im Fahrerhandbuch.
+  en: >-
+    Schedule from the EU owner's manuals 2018 and 2019; it also applies to the 70 kW version ZR900D. The US editions give
+    24,000 km instead of 42,000 km for the valve clearance. Chain: check lubrication every 600 km and slack every
+    1,000 km. Also grease the steering stem bearing every 24,000 km or 2 years, replace fuel hoses every 5 years and
+    brake hoses every 4 years. Valve clearance specs are not in the owner's manual.

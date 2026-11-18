@@ -1,0 +1,82 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-er-6n-2009
+type: MOTORCYCLE
+make: Kawasaki
+model: ER-6n
+aliases: [ER6n, ER-6 n, ER 6n, ER-6n ABS, ER650C, ER650D]
+years: { from: 2009, to: 2009 }
+market: EU
+sources:
+  - id: sm-2009
+    kind: MANUFACTURER
+    title: Kawasaki ER-6n / ER-6n ABS (ER650C9F/D9F) Service Manual, First Edition (1) Nov. 2008 (99924-1418-01), copy hosted by motorcycle workshop moto4.ru
+    url: https://www.moto4.ru/downloads/Kawasaki-ER-6N-2009-Service-manual-99924-1418-01.pdf
+    locator: Periodic Maintenance Chart p. 2-3–2-5; Specifications p. 2-12–2-13; Spark plug gap p. 16-10
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [sm-2009]
+    details:
+      - { label: oil, value: "SAE 10W-40, API SE/SF/SG oder API SH/SJ/SL/SM mit JASO MA/MA1/MA2", quantity: "1,9 l mit Filterwechsel", sources: [sm-2009] }
+  - key: oil-filter
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [sm-2009]
+  - key: air-filter
+    intervalMonths: 24
+    sources: [sm-2009]
+  - key: spark-plugs
+    intervalKm: 12000
+    sources: [sm-2009]
+    details:
+      - { label: spark-plug, value: "NGK CR9EIA-9", sources: [sm-2009] }
+      - { label: electrode-gap, value: "0,8–0,9 mm", sources: [sm-2009] }
+  - key: valve-clearance
+    intervalKm: 42000
+    sources: [sm-2009]
+    details:
+      - { label: clearance-intake, value: "0,15–0,21 mm", sources: [sm-2009] }
+      - { label: clearance-exhaust, value: "0,22–0,31 mm", sources: [sm-2009] }
+  - key: coolant
+    intervalKm: 36000
+    intervalMonths: 36
+    sources: [sm-2009]
+    details:
+      - { label: coolant, value: "Dauerfrostschutz, 1:1 mit weichem Wasser", quantity: "1,2 l", sources: [sm-2009] }
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [sm-2009]
+    details:
+      - { label: fluid, value: "DOT 4", sources: [sm-2009] }
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [sm-2009]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [sm-2009]
+    details:
+      - { label: chain-slack, value: "25–35 mm", sources: [sm-2009] }
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [sm-2009]
+  - key: steering-head-bearing
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [sm-2009]
+  - key: throttle-body-sync
+    intervalKm: 12000
+    sources: [sm-2009]
+  - key: inspection
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [sm-2009]
+notes:
+  de: "Luftfiltereinsatz alle 12.000 km reinigen und alle 2 Jahre ersetzen (kein km-Intervall). Ventilspiel alle 42.000 km (EU). Bremsbeläge ab 6.000 km alle 6.000 km prüfen. Lenkkopflager alle 2 Jahre bzw. 24.000 km schmieren. Brems- und Kraftstoffschläuche alle 4 Jahre ersetzen."
+  en: "Clean the air filter element every 12,000 km and replace it every 2 years (no km interval). Valve clearance every 42,000 km (EU). Check brake pads every 6,000 km from 6,000 km. Lubricate the steering stem bearings every 2 years or 24,000 km. Replace brake and fuel hoses every 4 years."
