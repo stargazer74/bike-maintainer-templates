@@ -81,6 +81,9 @@ tasks:
     intervalMonths: 12
     firstDueKm: 1000
     sources: [manual, wa2004]
+  - key: alternator-belt
+    intervalKm: 60000
+    sources: [manual]
 notes:
   de: Einfahrkontrolle nach 1.000 km. Danach abwechselnd BMW Service (10.000, 30.000, 50.000 km …) und BMW Inspektion (20.000, 40.000 km …), dazu jährlich der Jahresservice. Bei Kurzstrecke oder Frost Öl und Filter spätestens alle 3 Monate bzw. 3.000 km. Kraftstofffilter bei schlechter Kraftstoffqualität alle 20.000 km, Luftfilter bei viel Staub öfter. Mit Integral-ABS Bremsflüssigkeit im Radkreis jährlich, im Steuerkreis alle zwei Jahre. Der Keilrippenriemen (Lichtmaschine) wird alle 60.000 km ersetzt. Für die Ventilspielwerte der Doppelzündungs-Modelle fehlt noch eine Quelle.
   en: Running-in check after 1,000 km. Then BMW Service (10,000, 30,000, 50,000 km …) alternates with BMW Inspection (20,000, 40,000 km …), plus a yearly Annual Service. For short trips or frost, change oil and filter every 3 months or 3,000 km at the latest. Fuel filter every 20,000 km with poor fuel, air filter more often in dusty conditions. With Integral ABS, brake fluid in the wheel circuit yearly, in the control circuit every two years. The poly-V (alternator) belt is replaced every 60,000 km. A source for the valve clearance values of the twin-spark models is still missing.

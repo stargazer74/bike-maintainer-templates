@@ -136,6 +136,23 @@ tasks:
     plausible:
       MOTORCYCLE: { intervalKm: [40000, 200000] }
 
+  alternator-belt:
+    name: { de: Generatorriemen ersetzen, en: Replace alternator belt }
+    description:
+      de: Antriebsriemen des Generators (Keilrippenriemen) erneuern.
+      en: Replace the drive belt of the alternator (poly-V belt).
+    plausible:
+      MOTORCYCLE: { intervalKm: [20000, 120000], intervalMonths: [36, 120] }
+      CAR: { intervalKm: [60000, 250000], intervalMonths: [48, 180] }
+
+  drive-belt:
+    name: { de: Antriebsriemen ersetzen, en: Replace drive belt }
+    description:
+      de: Zahnriemen des Hinterradantriebs erneuern, dabei Riemenrad und Ritzel prüfen.
+      en: Replace the toothed belt of the rear-wheel drive and check the belt pulley and sprocket.
+    plausible:
+      MOTORCYCLE: { intervalKm: [20000, 120000], intervalMonths: [36, 120] }
+
   gear-oil:
     name: { de: Getriebeöl wechseln, en: Change gear oil }
     description:

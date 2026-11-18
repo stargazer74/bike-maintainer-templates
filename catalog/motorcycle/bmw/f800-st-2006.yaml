@@ -55,6 +55,9 @@ tasks:
     intervalMonths: 12
     firstDueKm: 1200
     sources: [manual-2006, manual, hornig]
+  - key: drive-belt
+    intervalKm: 40000
+    sources: [hornig]
 notes:
   de: Die Einfahrkontrolle mit Öl- und Ölfilterwechsel ist zwischen 500 und 1.200 km fällig. Die Auflage 2006 nennt eine Jahresinspektion, den Pflegedienst nach 10.000 km und dann alle 20.000 km sowie die Inspektion alle 20.000 km, also alle 10.000 km oder jährlich einen Service; in der Auflage 2011 heißt es nur noch BMW Service einmal jährlich, bei hoher Laufleistung mit Höchst-Kilometerstand. Die Einzelarbeiten (Ventilspiel, Zündkerzen, Luftfilter beim 20.000-km-Service) stammen vom Händler Hornig. Zahnriemen und Ruckdämpfer laut Hornig alle 40.000 km ersetzen.
   en: The running-in check with oil and oil filter change is due between 500 and 1,200 km. The 2006 edition lists an annual inspection, the care service after 10,000 km and then every 20,000 km, and the inspection every 20,000 km, i.e. a service every 10,000 km or yearly; the 2011 edition only says BMW service once a year, with a maximum odometer reading for high-mileage riders. The individual jobs (valve clearance, spark plugs, air filter at the 20,000 km service) come from the dealer Hornig. According to Hornig the drive belt and cush drive are replaced every 40,000 km.
