@@ -53,6 +53,10 @@ tasks:
 notes: { de: …, en: … }            # optional
 ```
 
+- **Baujahre:** Eine Vorlage umfasst alle Baujahre, für die ihre Quelle gilt – laut Deckblatt, Typbezeichnung oder
+  Angaben zur Modellpflege, nicht nur das Baujahr des gefundenen Handbuchs. Ändert sich der Wartungsplan (Modellpflege,
+  neuer Motor, andere Intervalle), beginnt eine neue Datei; der Dateiname trägt das erste Baujahr des Bereichs. Ist
+  nicht belegt, dass ein Nachbarjahr denselben Plan hat, bleibt es draußen.
 - **Intervalle** wie im Aufgabenmodell der API: `intervalKm`, `intervalMonths`, `firstDueKm`, `firstDueMonths`,
   `oneTime`. Eine wiederkehrende Aufgabe braucht `intervalKm` oder `intervalMonths`; eine einmalige (`oneTime: true`,
   z. B. Einfahrinspektion) eine erste Fälligkeit und kein Intervall.
@@ -92,6 +96,12 @@ Ein **wöchentlicher Linkcheck** (`.github/workflows/link-check.yml`) ruft alle 
 `./mvnw test -Dgroups=links -Dtests.excluded= -Dtest=LinkCheckTest`, Bericht in `target/link-check.md`.
 
 ## Neue Vorlagen (Stapel)
+
+**Reihenfolge:** zuerst ältere Modelle (Baujahr bis 2018), ausgewählt nach dem Bestand in Deutschland
+(KBA-Bestandsstatistik nach Marke und Modell) – an ihnen wird am ehesten selbst geschraubt. Neuere Modelle folgen
+später. Weil Selbstschrauber vor allem die Werte zur Arbeit brauchen, werden die **Details** mit erfasst, soweit die
+Quelle sie nennt: Ölsorte und -menge, Ventilspiel Ein-/Auslass, Zündkerze und Elektrodenabstand, Kettendurchhang,
+Kühl- und Bremsflüssigkeit.
 
 Gearbeitet wird in **Stapeln**: ein Hersteller mit einem Fahrzeugtyp, ein PR je Stapel. Die PR-Beschreibung enthält
 

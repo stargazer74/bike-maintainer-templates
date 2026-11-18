@@ -25,7 +25,16 @@ eclipse-temurin:25-jdk ./mvnw -Dmaven.repo.local=/tmp/.m2/repository verify`.
 - **Manufacturer first.** `MANUFACTURER` sources (owner's manual, service booklet, official site) over anything else;
   `FORUM` only together with an independent second source from another site.
 - **Locator:** page number or section in the manual, so a reviewer finds the value quickly.
-- **One file per model and year range;** a new range when the schedule changes. Ranges of a model must not overlap.
+- **One file per model and year range.** The range covers every model year the source applies to (cover, type
+  designation, facelift information), not just the year of the manual you found; the file name carries the first
+  year. A new file starts when the schedule changes (facelift, new engine, other intervals). Leave a neighbouring
+  year out unless a source shows it has the same schedule. Ranges of a model must not overlap.
+- **Priorities:** older models first (model year up to 2018), chosen by the vehicle stock in Germany (KBA), because
+  their owners are the ones who do their own maintenance. Capture the details a mechanic needs whenever the source
+  states them: oil grade and quantity, valve clearance intake/exhaust, spark plug and gap, chain slack, coolant and
+  brake fluid.
+- **Workshop manuals** (Haynes, Bucheli etc.) are allowed as secondary sources (`REPAIR_PORTAL` is not right for
+  them; use `PRESS`): values with page reference only, never text.
 - **Out-of-range values:** check twice against the source, then `plausibilityException` with the reason. Never widen
   a range in `tasks.yaml` just to make one model pass.
 - **Units:** km and months. Convert miles or years from the source exactly (1 year = 12 months) and keep the original
