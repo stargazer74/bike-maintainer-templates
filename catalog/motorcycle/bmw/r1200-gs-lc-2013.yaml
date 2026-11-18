@@ -1,0 +1,98 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: bmw-r1200-gs-lc-2013
+type: MOTORCYCLE
+make: BMW
+model: R 1200 GS
+aliases: [R 1200 GS LC, R1200GS LC, R1200GS, R 1200GS, R 1200 GS Adventure, R1200GS Adventure, R 1200 GSA, R1200GSA]
+years: { from: 2013, to: 2018 }
+market: EU
+sources:
+  - id: gs2013
+    kind: MANUFACTURER
+    title: BMW Motorrad Rider's Manual R 1200 GS, 02.2013, 3rd edition (R_0A01_RM_0213_R1200GS_01, English)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0A01_RM_0213_R1200GS_01.pdf
+    locator: Maintenance work (BMW Running-in Check, BMW Service) S. 165; Technical data, Engine oil S. 153
+    retrieved: 2026-11-18
+  - id: gs2015
+    kind: MANUFACTURER
+    title: BMW Motorrad Rider's Manual R 1200 GS, 08.2015, 8th edition (R_0A01_RM_0815_01, English)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0A01_RM_0815_01.pdf
+    locator: Maintenance schedule S. 186–187; Maintenance work S. 185; Technical data S. 173 (engine oil), 179 (spark plugs); Brake fluid S. 121–122
+    retrieved: 2026-11-18
+  - id: gs2017
+    kind: MANUFACTURER
+    title: BMW Motorrad Rider's Manual R 1200 GS, 06.2016, 1st edition (R_0A51_RM_0616_01, English)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0A51_RM_0616_01.pdf
+    locator: Maintenance schedule S. 212–213
+    retrieved: 2026-11-18
+  - id: gs2018
+    kind: MANUFACTURER
+    title: BMW Motorrad Rider's Manual R 1200 GS (TFT), 11.2017, 3rd edition (R_0A51_RM-TFT_1117_01, English)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0A51_RM-TFT_1117_01.pdf
+    locator: Maintenance schedule S. 238–239 (Legende 1, running-in check incl. oil change); Maintenance work S. 237; Technical data S. 221 (engine oil), 228 (spark plugs); Brake fluid S. 166–167
+    retrieved: 2026-11-18
+  - id: adv2015
+    kind: MANUFACTURER
+    title: BMW Motorrad Rider's Manual R 1200 GS Adventure, 08.2015, 5th edition (R_0A02_RM_0815_01, English)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0A02_RM_0815_01.pdf
+    locator: Maintenance schedule S. 186–187; Technical data S. 171 (engine oil), 177 (spark plugs)
+    retrieved: 2026-11-18
+  - id: adv2018
+    kind: MANUFACTURER
+    title: BMW Motorrad Rider's Manual R 1200 GS Adventure (TFT), 11.2017, 8th edition (R_0A02_RM-TFT_1117_01, English)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0A02_RM-TFT_1117_01.pdf
+    locator: Maintenance schedule S. 234–235 (Legende 1, running-in check incl. oil change); Technical data S. 220 (engine oil), 227 (spark plugs)
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [gs2015, gs2017, gs2018, adv2015, adv2018]
+    details:
+      - { label: oil, value: "SAE 5W-40, API SL / JASO MA2, keine Additive (z. B. Molybdän)", quantity: "max. 4,0 l mit Filterwechsel", sources: [gs2015, gs2018, adv2015, adv2018] }
+  - key: oil-filter
+    intervalKm: 10000
+    intervalMonths: 12
+    sources: [gs2015, gs2017, gs2018, adv2015, adv2018]
+  - key: final-drive-oil
+    intervalKm: 20000
+    intervalMonths: 24
+    sources: [gs2015, gs2017, gs2018, adv2015, adv2018]
+  - key: valve-clearance
+    intervalKm: 20000
+    sources: [gs2015, gs2017, gs2018, adv2015, adv2018]
+  - key: spark-plugs
+    intervalKm: 20000
+    sources: [gs2015, gs2017, gs2018, adv2015, adv2018]
+    details:
+      - { label: spark-plug, value: NGK LMAR8D-J, sources: [gs2013, gs2015, gs2018, adv2015, adv2018] }
+      - { label: electrode-gap, value: "0,8 ± 0,1 mm (neu)", sources: [gs2013, gs2015, gs2018, adv2015, adv2018] }
+  - key: air-filter
+    intervalKm: 20000
+    sources: [gs2015, gs2017, gs2018, adv2015, adv2018]
+  - key: brake-fluid
+    intervalMonths: 24
+    firstDueMonths: 12
+    sources: [gs2015, gs2017, gs2018, adv2015, adv2018]
+    details:
+      - { label: fluid, value: DOT4, sources: [gs2015, gs2018] }
+  - key: inspection
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [gs2013, gs2015, gs2017, gs2018, adv2015, adv2018]
+notes:
+  de: >-
+    Gilt für die wassergekühlte R 1200 GS (Typ 0A01, ab Modelljahr 2017 Typ 0A51) und die R 1200 GS Adventure LC
+    (Typ 0A02, ab 2014). Die Einfahrkontrolle ist zwischen 500 und 1.200 km fällig; laut Ausgabe 11.2017 gehört ein
+    Ölwechsel dazu. Der BMW Service ist jährlich; Ölwechsel mit Filter jährlich oder alle 10.000 km, Öl im
+    Hinterradantrieb alle zwei Jahre oder 20.000 km, je nachdem, was zuerst eintritt. Bei Geländebetrieb den
+    Luftfilter zusätzlich jährlich bzw. alle 10.000 km prüfen. Bremsflüssigkeit erstmals nach einem Jahr, dann alle
+    zwei Jahre. Die Anleitung 02.2013 nennt ca. 4,2 l Öl mit Filterwechsel, spätere Ausgaben max. 4,0 l.
+  en: >-
+    Covers the liquid-cooled R 1200 GS (type 0A01, type 0A51 from model year 2017) and the R 1200 GS Adventure LC
+    (type 0A02, from 2014). The running-in check is due between 500 and 1,200 km; the 11.2017 edition states that it
+    includes an oil change. The BMW Service is yearly; oil and filter change yearly or every 10,000 km, final drive
+    oil every two years or 20,000 km, whichever comes first. For off-road use, also check the air filter yearly or
+    every 10,000 km. Brake fluid first after one year, then every two years. The 02.2013 manual gives approx. 4.2 l of
+    oil with filter change, later editions max. 4.0 l.

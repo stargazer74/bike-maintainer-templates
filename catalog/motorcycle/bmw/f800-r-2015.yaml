@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: bmw-f800-r-2015
+type: MOTORCYCLE
+make: BMW
+model: F 800 R
+aliases: [F800R, F 800R, F800 R]
+years: { from: 2015, to: 2019 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: BMW Motorrad Betriebsanleitung F 800 R, 08.2015, 3. Auflage (F_0B04_RM_0815_00, Deutsch)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/F_0B04_RM_0815_00.pdf
+    locator: Wartungsplan S. 156–157; Standard BMW Service S. 158; Wartungsarbeiten S. 155; Kette S. 108; Technische Daten S. 143, 149; Bremsflüssigkeit S. 95
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    intervalMonths: 12
+    sources: [manual]
+    details:
+      - { label: oil, value: "SAE 15W-50, API SJ / JASO MA2, keine Additive (z. B. Molybdän)", quantity: "ca. 3,1 l mit Filterwechsel", sources: [manual] }
+  - key: oil-filter
+    intervalKm: 10000
+    intervalMonths: 12
+    sources: [manual]
+  - key: valve-clearance
+    intervalKm: 20000
+    sources: [manual]
+  - key: spark-plugs
+    intervalKm: 40000
+    sources: [manual]
+    details:
+      - { label: spark-plug, value: NGK DCPR 8 E, sources: [manual] }
+      - { label: electrode-gap, value: "0,8–0,9 mm (neu)", sources: [manual] }
+  - key: air-filter
+    intervalKm: 20000
+    sources: [manual]
+  - key: fork-oil
+    intervalKm: 30000
+    sources: [manual]
+  - key: brake-fluid
+    intervalMonths: 24
+    firstDueMonths: 12
+    sources: [manual]
+    details:
+      - { label: fluid, value: DOT4, sources: [manual] }
+  - key: drive-chain-lube
+    intervalKm: 1000
+    sources: [manual]
+  - key: drive-chain-check
+    intervalMonths: 12
+    sources: [manual]
+    details:
+      - { label: chain-slack, value: "30–40 mm (unbelastet, auf Seitenstütze)", sources: [manual] }
+  - key: inspection
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [manual]
+notes:
+  de: Die Einfahrkontrolle ist zwischen 500 und 1.200 km fällig; der Wartungsplan sieht dort keinen Ölwechsel vor. Der Standard-BMW-Service ist jährlich und umfasst die Prüfung des Kettenantriebs; Öl und Ölfilter jährlich oder alle 10.000 km (was zuerst eintritt). Bremsflüssigkeit erstmals nach einem Jahr, dann alle zwei Jahre. Kette mindestens alle 1.000 km schmieren, nach Nässe oder Schmutz früher.
+  en: The running-in check is due between 500 and 1,200 km; the schedule lists no oil change there. The standard BMW service is yearly and includes the chain drive check; oil and oil filter yearly or every 10,000 km (whichever comes first). Brake fluid first after one year, then every two years. Lubricate the chain at least every 1,000 km, sooner after rain or dirt.

@@ -1,0 +1,105 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: bmw-r1200-gs-2010
+type: MOTORCYCLE
+make: BMW
+model: R 1200 GS
+aliases: [R1200GS, R 1200GS, R 1200 GS DOHC, R 1200 GS Adventure, R1200GS Adventure, R 1200 GSA, Camhead]
+years: { from: 2010, to: 2012 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: BMW Motorrad Betriebsanleitung R 1200 GS, © 2011 (R_0450_RM_0811_R1200GS_00, Deutsch)
+    url: https://manuals.bmw-motorrad.com/manuals/BA-Extern/IN/BA-INTERNET-COM/PDF/R_0450_RM_0811_R1200GS_00.pdf
+    locator: Bremsflüssigkeit S. 103; Motor S. 139; Motoröl S. 141; Zündkerzen S. 147; Wartungsarbeiten S. 152-153
+    retrieved: 2026-11-18
+  - id: runin
+    kind: DEALER
+    title: BMW Motorrad Maintenance schedule 0450 - R 1200 GS, 00 00 119 BMW Running-in Check, Kopie auf einer US-Händlerseite
+    url: https://cdnmedia.endeavorsuite.com/images/organizations/f95bf6fe-dd62-4427-b126-6a574ae7ef8d/BMW%20Service%20Schedules/BMW%20R%20Models/DOHC%20R%20Models/10%20-%2013/R1200GS-DOHC_600.pdf
+    locator: BMW Einfahrkontrolle, S. 1
+    retrieved: 2026-11-18
+  - id: service10
+    kind: DEALER
+    title: BMW Motorrad Maintenance schedule 0450 - R 1200 GS, K25 31, 00 00 111 BMW Service (10.000-km-Umfang), Kopie auf einer US-Händlerseite
+    url: https://cdnmedia.endeavorsuite.com/images/organizations/f95bf6fe-dd62-4427-b126-6a574ae7ef8d/BMW%20Service%20Schedules/BMW%20R%20Models/DOHC%20R%20Models/10%20-%2013/R1200GS-DOHC_6K.pdf
+    locator: BMW Service, S. 1
+    retrieved: 2026-11-18
+  - id: service20
+    kind: DEALER
+    title: BMW Motorrad Maintenance schedule 0450 - R 1200 GS, K25 31, 00 00 111 BMW Service (20.000-km-Umfang), Kopie auf einer US-Händlerseite
+    url: https://cdnmedia.endeavorsuite.com/images/organizations/f95bf6fe-dd62-4427-b126-6a574ae7ef8d/BMW%20Service%20Schedules/BMW%20R%20Models/DOHC%20R%20Models/10%20-%2013/R1200GS-DOHC_12K.pdf
+    locator: BMW Service, S. 1
+    retrieved: 2026-11-18
+  - id: annual
+    kind: DEALER
+    title: BMW Motorrad Maintenance schedule 0450 - R 1200 GS, K25 31, 00 00 111 BMW Service (Jahresumfang), Kopie auf einer US-Händlerseite
+    url: https://cdnmedia.endeavorsuite.com/images/organizations/f95bf6fe-dd62-4427-b126-6a574ae7ef8d/BMW%20Service%20Schedules/BMW%20R%20Models/DOHC%20R%20Models/10%20-%2013/R1200GS-DOHC_Annual.pdf
+    locator: BMW Service, S. 1
+    retrieved: 2026-11-18
+  - id: adventure20
+    kind: DEALER
+    title: BMW Motorrad Maintenance schedule 0470 - R 1200 GS Adventure, K25 32, 00 00 111 BMW Service (20.000-km-Umfang), Kopie auf einer US-Händlerseite
+    url: https://cdnmedia.endeavorsuite.com/images/organizations/f95bf6fe-dd62-4427-b126-6a574ae7ef8d/BMW%20Service%20Schedules/BMW%20R%20Models/DOHC%20R%20Models/10%20-%2013/R1200GS_ADV-DOHC_12K.pdf
+    locator: BMW Service, S. 1; gleiche Arbeiten und Intervalle wie R 1200 GS
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [runin, service10, service20, annual, adventure20]
+    details:
+      - { label: oil, value: "SAE 5W-40 (weitere Viskositäten je nach Außentemperatur), API SF / ACEA A2 oder besser", quantity: "max. 4,0 l mit Filterwechsel", sources: [manual] }
+  - key: oil-filter
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [runin, service10, service20, annual, adventure20]
+  - key: final-drive-oil
+    intervalKm: 20000
+    intervalMonths: 24
+    firstDueKm: 1200
+    sources: [runin, service20, annual, adventure20]
+  - key: gear-oil
+    intervalKm: 40000
+    intervalMonths: 24
+    firstDueMonths: 12
+    sources: [service20, annual, adventure20]
+  - key: valve-clearance
+    intervalKm: 10000
+    sources: [service10, service20, adventure20]
+  - key: spark-plugs
+    intervalKm: 20000
+    sources: [service20, adventure20]
+    details:
+      - { label: spark-plug, value: NGK MAR8B-JDS, sources: [manual] }
+      - { label: electrode-gap, value: "0,8 ± 0,1 mm", sources: [manual] }
+  - key: air-filter
+    intervalKm: 20000
+    sources: [service20, adventure20]
+  - key: throttle-body-sync
+    intervalKm: 10000
+    firstDueKm: 1200
+    sources: [runin, service10, service20, adventure20]
+  - key: brake-pads-check
+    intervalKm: 10000
+    sources: [service10, service20, adventure20]
+  - key: brake-fluid
+    intervalMonths: 24
+    firstDueMonths: 12
+    sources: [annual, service20, adventure20]
+    details:
+      - { label: fluid, value: DOT 4, sources: [manual] }
+  - key: inspection
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1200
+    sources: [manual, runin, service10]
+  - key: alternator-belt
+    intervalKm: 40000
+    intervalMonths: 72
+    sources: [service20]
+notes:
+  de: Luft-/ölgekühlter Boxer mit zwei obenliegenden Nockenwellen je Zylinder (DOHC), R 1200 GS 2010-2012 und R 1200 GS Adventure ab 2010 mit gleichem Wartungsplan. Die Einfahrkontrolle mit Öl-, Ölfilter- und Hinterradantriebsölwechsel ist zwischen 500 und 1.200 km fällig. Der BMW Service ist jährlich bzw. alle 10.000 km fällig. Getriebeöl und Bremsflüssigkeit erstmals nach einem Jahr, dann alle zwei Jahre (Getriebeöl spätestens alle 40.000 km). Der Generatorriemen wird alle sechs Jahre bzw. 40.000 km ersetzt.
+  en: Air/oil-cooled boxer with double overhead camshafts per cylinder (DOHC), R 1200 GS 2010-2012 and R 1200 GS Adventure from 2010 with the same schedule. The running-in check with engine oil, oil filter and final drive oil change is due between 500 and 1,200 km. BMW Service is due yearly or every 10,000 km. Gearbox oil and brake fluid first after one year, then every two years (gearbox oil at the latest every 40,000 km). The alternator belt is replaced every six years or 40,000 km.

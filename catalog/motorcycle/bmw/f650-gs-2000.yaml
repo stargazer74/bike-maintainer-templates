@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: bmw-f650-gs-2000
+type: MOTORCYCLE
+make: BMW
+model: F 650 GS
+aliases: [F650GS, F 650GS, F 650 GS Dakar, F650GS Dakar]
+years: { from: 2000, to: 2003 }
+market: EU
+sources:
+  - id: hornig
+    kind: DEALER
+    title: Hornig, Maintenance intervals / Service for BMW F 650, CS, GS, ST & Dakar (Technische Daten F650GS / GS Dakar 2000-2003, task lists by service)
+    url: https://motorcycleparts-hornig.com/BMW-F-650-CS-GS-ST-Dakar/Maintenance-interval-service/
+    locator: Technical data (Spalte F650GS 2000-2003); Running-in Check 1.000 km; 10.000 km service (30.000/50.000 km); 20.000 km service (40.000/60.000 km); Abschnitt Maintenance Plan & Service Intervals
+    retrieved: 2026-11-18
+  - id: bmwna
+    kind: DEALER
+    title: BMW Motorcycles (USA) Maintenance Schedule F 650 GS / F 650 GS Dakar / F 650 CS, Werkstatt-Checkliste, PDF vom 07/2002 (Kopie im f650.com FAQ)
+    url: https://faq.f650.com/GSFAQs/Photos/Documentation/F650GS-CS_Maintenance_Schedule.pdf
+    locator: S. 1 Zeilen Bremsflüssigkeit (Spalte Annual Service) und Ventilspiel; S. 2 Zeile Motoröl
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 10000
+    firstDueKm: 1000
+    sources: [hornig]
+    details:
+      - { label: oil, value: "SAE 10W-40 oder 15W-40, API SF/SG/SH, kein synthetisches Öl", quantity: "2,3 l mit Filterwechsel", sources: [bmwna, hornig] }
+  - key: oil-filter
+    intervalKm: 10000
+    firstDueKm: 1000
+    sources: [hornig]
+  - key: valve-clearance
+    intervalKm: 10000
+    sources: [hornig]
+    details:
+      - { label: clearance-intake, value: "0,03–0,11 mm", sources: [bmwna] }
+      - { label: clearance-exhaust, value: "0,25–0,33 mm", sources: [bmwna] }
+  - key: spark-plugs
+    intervalKm: 20000
+    sources: [hornig]
+    details:
+      - { label: spark-plug, value: NGK D8EA, sources: [hornig] }
+  - key: air-filter
+    intervalKm: 20000
+    sources: [hornig]
+  - key: fuel-filter
+    intervalKm: 40000
+    sources: [hornig]
+  - key: drive-chain-check
+    intervalKm: 10000
+    firstDueKm: 1000
+    sources: [hornig]
+  - key: brake-pads-check
+    intervalKm: 10000
+    sources: [hornig]
+  - key: steering-head-bearing
+    intervalKm: 10000
+    sources: [hornig]
+  - key: brake-fluid
+    intervalMonths: 12
+    sources: [bmwna]
+    details:
+      - { label: fluid, value: DOT 4, sources: [bmwna, hornig] }
+  - key: inspection
+    intervalKm: 10000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [hornig, bmwna]
+notes:
+  de: Keine BMW-Anleitung für diese Baujahre online gefunden; die Werte stammen aus einer Händlerliste (km) und der Werkstatt-Checkliste von BMW USA (Meilen, Ölsorte, Ventilspiel, Bremsflüssigkeit jährlich). Erste Inspektion bei 1.000 km, dann Service bzw. Inspektion alle 10.000 km, mindestens jährlich. Ölmenge 2,3 l mit Filter laut Händlerliste.
+  en: No BMW manual for these model years was found online; values come from a dealer list (km) and the BMW USA workshop checklist (miles, oil grade, valve clearance, brake fluid yearly). First inspection at 1,000 km, then service or inspection every 10,000 km, at least yearly. Oil quantity 2.3 l with filter according to the dealer list.
