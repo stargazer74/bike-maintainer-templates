@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-z1000-2013
+type: MOTORCYCLE
+make: Kawasaki
+model: Z1000
+aliases: [Z 1000, ZR1000, ZR1000D, Z1000 ABS]
+years: { from: 2013, to: 2013 }
+market: EU
+sources:
+  - id: om2013
+    kind: MANUFACTURER
+    title: Kawasaki Z1000 / Z1000 ABS (ZR1000DDF) Owner's Manual 2013, EU edition (99976-1758, English), Kawasaki online viewer
+    url: https://pws.ktivs.net/dispeBook?file=99976-1758&lang_code=EN
+    locator: Periodic Maintenance Chart p. 81–90; Specifications p. 11 (spark plug, oil, coolant capacity); oil capacity p. 96; coolant p. 99; spark plug gap p. 103; chain slack p. 117; brake fluid p. 122
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om2013]
+    details:
+      - { label: oil, value: "SAE 10W-40, API SG/SH/SJ/SL/SM, JASO MA/MA1/MA2", quantity: "3,8 l mit Filterwechsel", sources: [om2013] }
+  - key: oil-filter
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om2013]
+  - key: air-filter
+    intervalKm: 18000
+    sources: [om2013]
+  - key: spark-plugs
+    intervalKm: 12000
+    sources: [om2013]
+    details:
+      - { label: spark-plug, value: NGK CR9EIA-9, sources: [om2013] }
+      - { label: electrode-gap, value: "0,8–0,9 mm", sources: [om2013] }
+  - key: valve-clearance
+    intervalKm: 42000
+    sources: [om2013]
+  - key: throttle-body-sync
+    intervalKm: 12000
+    sources: [om2013]
+  - key: coolant
+    intervalKm: 36000
+    intervalMonths: 36
+    sources: [om2013]
+    details:
+      - { label: coolant, value: "Permanent-Frostschutz (Ethylenglykol), ab Werk 50 %", quantity: "2,9 l", sources: [om2013] }
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [om2013]
+    details:
+      - { label: fluid, value: DOT 4, sources: [om2013] }
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [om2013]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [om2013]
+    details:
+      - { label: chain-slack, value: "20–30 mm", sources: [om2013] }
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [om2013]
+  - key: steering-head-bearing
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om2013]
+  - key: inspection
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om2013]
+notes:
+  de: >-
+    Plan aus dem EU-Handbuch 2013 (ZR1000DDF). Ventilspiel alle 42.000 km (die US-Ausgabe 2012 nennt 24.000 km).
+    Kette: Schmierzustand alle 600 km, Durchhang alle 1.000 km prüfen. Lenkkopflager zusätzlich alle 24.000 km bzw.
+    2 Jahre schmieren, Kraftstoffschläuche alle 5 Jahre, Kühlerschläuche alle 3 Jahre, Bremsschläuche alle 4 Jahre
+    ersetzen. Ventilspiel-Sollwerte stehen nicht im Fahrerhandbuch.
+  en: >-
+    Schedule from the EU owner's manual 2013 (ZR1000DDF). Valve clearance every 42,000 km (the 2012 US edition says
+    24,000 km). Chain: check lubrication every 600 km and slack every 1,000 km. Also grease the steering stem bearings
+    every 24,000 km or 2 years, replace fuel hoses every 5 years, radiator hoses every 3 years and brake hoses every
+    4 years. Valve clearance specs are not in the owner's manual.

@@ -1,0 +1,76 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-er-6f-2010
+type: MOTORCYCLE
+make: Kawasaki
+model: ER-6f
+aliases: [ER6f, ER-6 f, ER 6f, ER-6f ABS, Ninja 650R, EX650C, EX650D]
+years: { from: 2010, to: 2010 }
+market: EU
+sources:
+  - id: us-2010
+    kind: MANUFACTURER
+    title: Kawasaki Ninja 650R (EX650CAF, 2010) Owner's Manual, US edition (km and mile chart), English (99987-1613), official Kawasaki manual viewer (KTIVS)
+    url: https://pws.ktivs.net/dispeBook?file=99987-1613&lang_code=EN
+    locator: Periodic Maintenance Chart p. 76–85; Specifications p. 9; Engine Oil p. 91; Coolant p. 94; Spark Plugs p. 98; Drive Chain Slack p. 112; Brake Fluid p. 121
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [us-2010]
+    details:
+      - { label: oil, value: "SAE 10W-40, API SG/SH/SJ/SL/SM, JASO MA/MA1/MA2", quantity: "1,9 l mit Filterwechsel", sources: [us-2010] }
+  - key: oil-filter
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [us-2010]
+  - key: air-filter
+    intervalMonths: 24
+    sources: [us-2010]
+  - key: spark-plugs
+    intervalKm: 12000
+    sources: [us-2010]
+    details:
+      - { label: spark-plug, value: "NGK CR9EIA-9", sources: [us-2010] }
+      - { label: electrode-gap, value: "0,8–0,9 mm", sources: [us-2010] }
+  - key: coolant
+    intervalKm: 36000
+    intervalMonths: 36
+    sources: [us-2010]
+    details:
+      - { label: coolant, value: "Dauerfrostschutz, 1:1 mit weichem Wasser", quantity: "1,2 l", sources: [us-2010] }
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [us-2010]
+    details:
+      - { label: fluid, value: "DOT 4", sources: [us-2010] }
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [us-2010]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [us-2010]
+    details:
+      - { label: chain-slack, value: "25–35 mm", sources: [us-2010] }
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [us-2010]
+  - key: steering-head-bearing
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [us-2010]
+  - key: throttle-body-sync
+    intervalKm: 12000
+    sources: [us-2010]
+  - key: inspection
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [us-2010]
+notes:
+  de: "Quelle ist die US-Ausgabe (Ninja 650R = ER-6f); eine EU-Ausgabe war nicht auffindbar. Das Ventilspiel fehlt, weil die US-Ausgabe nur das US-Intervall nennt. Luftfiltereinsatz alle 12.000 km reinigen und alle 2 Jahre ersetzen (kein km-Intervall). Bremsbeläge ab 6.000 km alle 6.000 km prüfen. Lenkkopflager alle 2 Jahre bzw. 24.000 km schmieren. Brems- und Kraftstoffschläuche alle 4 Jahre ersetzen."
+  en: "Source is the US edition (Ninja 650R = ER-6f); no EU edition was found. Valve clearance is left out because the US edition only gives the US interval. Clean the air filter element every 12,000 km and replace it every 2 years (no km interval). Check brake pads every 6,000 km from 6,000 km. Lubricate the steering stem bearings every 2 years or 24,000 km. Replace brake and fuel hoses every 4 years."

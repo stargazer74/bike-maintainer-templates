@@ -70,7 +70,10 @@ Editoren mit YAML-Language-Server (VS Code, IntelliJ) prüfen und vervollständi
 
 ## Quellen
 
-1. **Herstellerangaben bevorzugt:** Fahrerhandbuch, Serviceheft, offizielle Herstellerseite (`MANUFACTURER`).
+1. **Herstellerangaben bevorzugt:** Fahrerhandbuch, Serviceheft, offizielle Herstellerseite (`MANUFACTURER`). Die
+   europäische Ausgabe ist erste Wahl; die Ausgabe eines anderen Markts (z. B. USA, Australien) reicht, wenn ihre
+   Wartungstabelle in km angegeben ist. Der Markt steht dann im Titel der Quelle; nur dort geltende Punkte (z. B.
+   kalifornische Abgasvorschriften) werden nicht übernommen.
 2. **Zweitrangige Quellen** sind erlaubt (`DEALER`, `PRESS`, `REPAIR_PORTAL`) und werden in der App gekennzeichnet.
 3. **Foren** (`FORUM`) zählen nur, wenn eine zweite, unabhängige Quelle (andere Seite) dasselbe sagt.
 4. **Nur Fakten:** In die Dateien kommen nur Werte und Quellenangaben (Titel, URL, Fundstelle, Abrufdatum). Texte,

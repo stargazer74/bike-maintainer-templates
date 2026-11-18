@@ -1,0 +1,91 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-z900-2017
+type: MOTORCYCLE
+make: Kawasaki
+model: Z900
+aliases: [Z 900, ZR900, ZR900A, ZR900B, Z900 ABS]
+years: { from: 2017, to: 2017 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: Kawasaki Z900 / Z900 ABS (ZR900AHF/BHF) Owner's Manual 2017, US edition (99987-1937, English; chart in km), Kawasaki online viewer
+    url: https://pws.ktivs.net/dispeBook?file=99987-1937&lang_code=EN
+    locator: Periodic Maintenance p. 104–108; General Information p. 26 (spark plug, oil, coolant capacity) and p. 28 (brake fluid); oil capacity p. 112; coolant p. 114; chain slack p. 121
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+    details:
+      - { label: oil, value: "SAE 10W-40, API SG/SH/SJ/SL/SM, JASO MA/MA1/MA2", quantity: "3,6 l mit Filterwechsel", sources: [manual] }
+  - key: oil-filter
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+  - key: air-filter
+    intervalKm: 18000
+    sources: [manual]
+  - key: spark-plugs
+    intervalKm: 12000
+    sources: [manual]
+    details:
+      - { label: spark-plug, value: NGK CR9EIA-9, sources: [manual] }
+      - { label: electrode-gap, value: "0,8–0,9 mm", sources: [manual] }
+  - key: valve-clearance
+    intervalKm: 24000
+    sources: [manual]
+  - key: throttle-body-sync
+    intervalKm: 12000
+    sources: [manual]
+  - key: fuel-filter
+    intervalKm: 24000
+    sources: [manual]
+  - key: coolant
+    intervalKm: 36000
+    intervalMonths: 36
+    sources: [manual]
+    details:
+      - { label: coolant, value: "Permanent-Frostschutz (Ethylenglykol, für Alu-Motoren), ab Werk 50 %", quantity: "2,4 l", sources: [manual] }
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [manual]
+    details:
+      - { label: fluid, value: DOT 4, sources: [manual] }
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [manual]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [manual]
+    details:
+      - { label: chain-slack, value: "25–35 mm", sources: [manual] }
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [manual]
+  - key: steering-head-bearing
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+  - key: inspection
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+notes:
+  de: >-
+    Plan aus dem US-Handbuch 2017 (Tabelle in km); eine europäische Ausgabe für 2017 war nicht erreichbar. Die
+    EU-Handbücher ab 2018 nennen für das Ventilspiel 42.000 km statt 24.000 km, sonst denselben Plan. Kette:
+    Schmierzustand alle 600 km, Durchhang alle 1.000 km prüfen. Lenkkopflager zusätzlich alle 24.000 km bzw. 2 Jahre
+    schmieren, Kraftstoffschläuche alle 5 Jahre, Bremsschläuche alle 4 Jahre ersetzen. Ventilspiel-Sollwerte stehen
+    nicht im Fahrerhandbuch.
+  en: >-
+    Schedule from the US owner's manual 2017 (chart in km); no European edition for 2017 was reachable. The EU manuals
+    from 2018 give 42,000 km instead of 24,000 km for the valve clearance and otherwise the same schedule. Chain: check
+    lubrication every 600 km and slack every 1,000 km. Also grease the steering stem bearing every 24,000 km or 2 years,
+    replace fuel hoses every 5 years and brake hoses every 4 years. Valve clearance specs are not in the owner's manual.

@@ -1,0 +1,102 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-z1000-2017
+type: MOTORCYCLE
+make: Kawasaki
+model: Z1000
+aliases: [Z 1000, ZR1000, ZR1000H, ZR1000J, Z1000 R, Z1000 R Edition]
+years: { from: 2017, to: 2018 }
+market: EU
+sources:
+  - id: om2018
+    kind: MANUFACTURER
+    title: Kawasaki Z1000 (ZR1000HJF) Owner's Manual 2018, EU edition (99976-0086, English), Kawasaki online viewer
+    url: https://pws.ktivs.net/dispeBook?file=99976-0086&lang_code=EN
+    locator: Periodic Maintenance p. 102–106; General Information p. 23 (spark plug, oil, coolant capacity) and p. 24 (brake fluid); oil capacity p. 110; coolant p. 113; chain slack p. 120
+    retrieved: 2026-11-18
+  - id: om2017
+    kind: MANUFACTURER
+    title: Kawasaki Z1000 (ZR1000HHF) Owner's Manual 2017, EU edition (99976-0033, English), Kawasaki online viewer
+    url: https://pws.ktivs.net/dispeBook?file=99976-0033&lang_code=EN
+    locator: Periodic Maintenance p. 101–105
+    retrieved: 2026-11-18
+  - id: om2017r
+    kind: MANUFACTURER
+    title: Kawasaki Z1000 R Edition (ZR1000JHF) Owner's Manual 2017, EU edition (99976-0035, English), Kawasaki online viewer
+    url: https://pws.ktivs.net/dispeBook?file=99976-0035&lang_code=EN
+    locator: Periodic Maintenance p. 99–103
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om2018, om2017]
+    details:
+      - { label: oil, value: "SAE 10W-40, API SG/SH/SJ/SL/SM, JASO MA/MA1/MA2", quantity: "3,8 l mit Filterwechsel", sources: [om2018] }
+  - key: oil-filter
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om2018, om2017]
+  - key: air-filter
+    intervalKm: 18000
+    sources: [om2018, om2017]
+  - key: spark-plugs
+    intervalKm: 12000
+    sources: [om2018, om2017]
+    details:
+      - { label: spark-plug, value: NGK CR9EIA-9, sources: [om2018] }
+      - { label: electrode-gap, value: "0,8–0,9 mm", sources: [om2018] }
+  - key: valve-clearance
+    intervalKm: 42000
+    sources: [om2018, om2017, om2017r]
+  - key: throttle-body-sync
+    intervalKm: 12000
+    sources: [om2018, om2017]
+  - key: fuel-filter
+    intervalKm: 24000
+    sources: [om2018, om2017]
+  - key: coolant
+    intervalKm: 36000
+    intervalMonths: 36
+    sources: [om2018, om2017]
+    details:
+      - { label: coolant, value: "Permanent-Frostschutz (Ethylenglykol, für Alu-Motoren), ab Werk 50 %", quantity: "2,9 l", sources: [om2018] }
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [om2018, om2017]
+    details:
+      - { label: fluid, value: DOT 4, sources: [om2018] }
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [om2018, om2017]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [om2018, om2017]
+    details:
+      - { label: chain-slack, value: "20–30 mm", sources: [om2018] }
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [om2018, om2017]
+  - key: steering-head-bearing
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om2018, om2017]
+  - key: inspection
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om2018, om2017]
+notes:
+  de: >-
+    Plan aus den EU-Handbüchern 2017 und 2018 (Z1000 und Z1000 R Edition, Tabelle gleich). Ventilspiel alle 42.000 km
+    (die US-Ausgabe nennt 24.000 km). Kette: Schmierzustand alle 600 km, Durchhang alle 1.000 km prüfen.
+    Lenkkopflager zusätzlich alle 24.000 km bzw. 2 Jahre schmieren, Kraftstoffschläuche alle 5 Jahre, Bremsschläuche
+    alle 4 Jahre ersetzen. Ventilspiel-Sollwerte stehen nicht im Fahrerhandbuch.
+  en: >-
+    Schedule from the EU owner's manuals 2017 and 2018 (Z1000 and Z1000 R Edition, same chart). Valve clearance every
+    42,000 km (the US edition says 24,000 km). Chain: check lubrication every 600 km and slack every 1,000 km. Also
+    grease the steering stem bearing every 24,000 km or 2 years, replace fuel hoses every 5 years and brake hoses every
+    4 years. Valve clearance specs are not in the owner's manual.

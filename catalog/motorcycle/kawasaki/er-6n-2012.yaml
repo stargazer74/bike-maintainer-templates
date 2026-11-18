@@ -1,0 +1,94 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-er-6n-2012
+type: MOTORCYCLE
+make: Kawasaki
+model: ER-6n
+aliases: [ER6n, ER-6 n, ER 6n, ER-6n ABS, ER650E, ER650F]
+years: { from: 2012, to: 2015 }
+market: EU
+sources:
+  - id: om-2012
+    kind: MANUFACTURER
+    title: Kawasaki ER-6n / ER-6n ABS (ER650E/F, 2012) Owner's Manual, EU edition, English (99976-1645), official Kawasaki manual viewer (KTIVS)
+    url: https://pws.ktivs.net/dispeBook?file=99976-1645&lang_code=EN
+    locator: Periodic Maintenance Chart p. 80–89; Engine Oil p. 94–95; Spark Plugs p. 102; Drive Chain Slack p. 113; Brake Fluid p. 121
+    retrieved: 2026-11-18
+  - id: om-2015
+    kind: MANUFACTURER
+    title: Kawasaki ER-6n / ER-6n ABS (ER650EFF, 2015) Owner's Manual, EU edition, English (99976-1863), official Kawasaki manual viewer (KTIVS)
+    url: https://pws.ktivs.net/dispeBook?file=99976-1863&lang_code=EN
+    locator: Periodic Maintenance Chart p. 82–91
+    retrieved: 2026-11-18
+  - id: sm-2012
+    kind: MANUFACTURER
+    title: Kawasaki ER-6n / ER-6n ABS (ER650ECF/FCF) Service Manual, 1st Edition (3) Aug. 2011 (99924-1453-01), copy hosted by motorcycle workshop moto4.ru
+    url: https://www.moto4.ru/downloads/Kawasaki%20ER-6n%202012%20ER650ECF%20-%20FCF%2099924-1453-01.pdf
+    locator: Periodic Maintenance Chart p. 2-3–2-5; Specifications p. 2-12–2-13 (valve clearance, coolant, engine oil)
+    retrieved: 2026-11-18
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om-2012, om-2015]
+    details:
+      - { label: oil, value: "SAE 10W-40, API SG/SH/SJ/SL/SM, JASO MA/MA1/MA2", quantity: "1,8 l mit Filterwechsel", sources: [om-2012] }
+  - key: oil-filter
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om-2012, om-2015]
+  - key: air-filter
+    intervalKm: 18000
+    sources: [om-2012, om-2015]
+  - key: spark-plugs
+    intervalKm: 12000
+    sources: [om-2012, om-2015]
+    details:
+      - { label: spark-plug, value: "NGK CR9EIA-9", sources: [om-2012] }
+      - { label: electrode-gap, value: "0,8–0,9 mm", sources: [om-2012] }
+  - key: valve-clearance
+    intervalKm: 42000
+    sources: [om-2012, om-2015, sm-2012]
+    details:
+      - { label: clearance-intake, value: "0,15–0,21 mm", sources: [sm-2012] }
+      - { label: clearance-exhaust, value: "0,22–0,31 mm", sources: [sm-2012] }
+  - key: coolant
+    intervalKm: 36000
+    intervalMonths: 36
+    sources: [om-2012, om-2015]
+    details:
+      - { label: coolant, value: "Dauerfrostschutz, 1:1 mit weichem Wasser", quantity: "1,2 l", sources: [sm-2012] }
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [om-2012, om-2015]
+    details:
+      - { label: fluid, value: "DOT 4", sources: [om-2012] }
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [om-2012, om-2015]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [om-2012, om-2015]
+    details:
+      - { label: chain-slack, value: "25–35 mm", sources: [om-2012] }
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [om-2012, om-2015]
+  - key: steering-head-bearing
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om-2012, om-2015]
+  - key: throttle-body-sync
+    intervalKm: 12000
+    sources: [om-2012, om-2015]
+  - key: inspection
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [om-2012, om-2015]
+notes:
+  de: "Ventilspiel alle 42.000 km (EU; US-Ausgaben nennen 24.000 km). Bremsbeläge ab 6.000 km alle 6.000 km prüfen. Lenkkopflager: Spiel jährlich bzw. alle 12.000 km prüfen, Lager alle 2 Jahre bzw. 24.000 km schmieren. Bremsschläuche und Kraftstoffschläuche nach 4 bzw. 5 Jahren ersetzen."
+  en: "Valve clearance every 42,000 km (EU; US editions state 24,000 km). Check brake pads every 6,000 km from 6,000 km. Steering: check play yearly or every 12,000 km, lubricate the stem bearings every 2 years or 24,000 km. Replace brake hoses after 4 years and fuel hoses after 5 years."
