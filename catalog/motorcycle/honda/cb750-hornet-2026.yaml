@@ -1,0 +1,72 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: honda-cb750-hornet-2026
+type: MOTORCYCLE
+make: Honda
+model: CB750 Hornet
+aliases: [Hornet, Hornet 750, CB 750 Hornet, CB750AC]
+years: { from: 2026, to: 2026 }
+market: EU
+sources:
+  - id: manual
+    kind: MANUFACTURER
+    title: Honda HORNET (CB750AC) Owner's Manual, model year 2026 (32MLB6200, English)
+    url: https://honda-moto.ro/wp-content/uploads/CB750_OM_26YM_EN.pdf
+    locator: Maintenance Schedule p. 105–106; Specifications p. 180
+    retrieved: 2026-11-17
+tasks:
+  - key: engine-oil
+    intervalKm: 12000
+    intervalMonths: 12
+    firstDueKm: 1000
+    sources: [manual]
+    details:
+      - { label: oil, value: "SAE 10W-30, JASO T 903 MA", quantity: "3,5 l mit Filterwechsel", sources: [manual] }
+  - key: oil-filter
+    intervalKm: 24000
+    firstDueKm: 1000
+    sources: [manual]
+  - key: air-filter
+    intervalKm: 24000
+    sources: [manual]
+  - key: spark-plugs
+    intervalKm: 48000
+    sources: [manual]
+    details:
+      - { label: spark-plug, value: NGK SILMAR8A9S, sources: [manual] }
+      - { label: electrode-gap, value: "0,8–0,9 mm", sources: [manual] }
+  - key: valve-clearance
+    intervalKm: 24000
+    sources: [manual]
+  - key: coolant
+    intervalMonths: 36
+    sources: [manual]
+    details:
+      - { label: coolant, value: Pro Honda HP Coolant, quantity: "1,53 l", sources: [manual] }
+  - key: brake-fluid
+    intervalMonths: 24
+    sources: [manual]
+    details:
+      - { label: fluid, value: DOT 4, sources: [manual] }
+  - key: drive-chain-lube
+    intervalKm: 1000
+    sources: [manual]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [manual]
+    details:
+      - { label: chain-slack, value: "25–35 mm", sources: [manual] }
+  - key: brake-pads-check
+    intervalKm: 12000
+    intervalMonths: 12
+    sources: [manual]
+  - key: steering-head-bearing
+    intervalKm: 12000
+    intervalMonths: 12
+    sources: [manual]
+  - key: inspection
+    intervalKm: 12000
+    intervalMonths: 12
+    sources: [manual]
+notes:
+  de: Ölfilter ab der Erstinspektion alle 24.000 km. Zündkerzen werden bei 24.000 km geprüft und bei 48.000 km ersetzt.
+  en: Oil filter every 24,000 km after the first service. Spark plugs are checked at 24,000 km and replaced at 48,000 km.

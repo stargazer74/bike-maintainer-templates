@@ -1,0 +1,17 @@
+# Test fixture: smallest dictionary for the checker tests (not part of the catalog).
+tasks:
+  engine-oil:
+    name: { de: Motoröl wechseln, en: Change engine oil }
+    description: { de: Motoröl wechseln., en: Change the engine oil. }
+    plausible:
+      MOTORCYCLE: { intervalKm: [1000, 30000], intervalMonths: [6, 36] }
+  valve-clearance:
+    name: { de: Ventilspiel prüfen, en: Check valve clearance }
+    description: { de: Ventilspiel prüfen., en: Check the valve clearance. }
+    plausible:
+      MOTORCYCLE: { intervalKm: [5000, 100000] }
+  inspection:
+    name: { de: Inspektion, en: Service inspection }
+    description: { de: Inspektion., en: Service inspection. }
+details:
+  oil: { de: Öl, en: Oil }

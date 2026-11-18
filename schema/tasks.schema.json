@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/stargazer74/bike-maintainer-templates/schema/tasks.schema.json",
+  "title": "Wörterbuch der Aufgaben",
+  "description": "Name und Beschreibung je Aufgabenschlüssel (Deutsch und Englisch), plausible Spannen je Fahrzeugtyp und die Bezeichnungen der Details.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["tasks", "details"],
+  "properties": {
+    "tasks": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "$ref": "#/$defs/slug" },
+      "additionalProperties": { "$ref": "#/$defs/task" }
+    },
+    "details": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "$ref": "#/$defs/slug" },
+      "additionalProperties": { "$ref": "#/$defs/text" }
+    }
+  },
+  "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "text": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["de", "en"],
+      "properties": {
+        "de": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "range": {
+      "description": "[kleinster, größter] plausibler Wert, beide einschließlich",
+      "type": "array",
+      "prefixItems": [
+        { "type": "integer", "minimum": 1 },
+        { "type": "integer", "minimum": 1 }
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "plausible": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "intervalKm": { "$ref": "#/$defs/range" },
+        "intervalMonths": { "$ref": "#/$defs/range" }
+      }
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "description"],
+      "properties": {
+        "name": { "$ref": "#/$defs/text" },
+        "description": { "$ref": "#/$defs/text" },
+        "plausible": {
+          "description": "Plausible Spannen je Fahrzeugtyp; ohne Eintrag für einen Typ wird nicht geprüft",
+          "type": "object",
+          "propertyNames": { "enum": ["MOTORCYCLE", "CAR", "BICYCLE", "E_BIKE", "QUAD", "SCOOTER"] },
+          "additionalProperties": { "$ref": "#/$defs/plausible" }
+        }
+      }
+    }
+  }
+}

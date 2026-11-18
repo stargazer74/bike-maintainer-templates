@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/stargazer74/bike-maintainer-templates/schema/template.schema.json",
+  "title": "Wartungsplan-Vorlage",
+  "description": "Wartungsplan eines Modells und Baujahresbereichs. Nur Werte und Quellenangaben, keine Texte aus Handbüchern.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "type", "make", "model", "years", "market", "sources", "tasks"],
+  "properties": {
+    "id": {
+      "description": "<hersteller>-<dateiname ohne .yaml>, z. B. honda-cb650r-2019",
+      "$ref": "#/$defs/slug"
+    },
+    "type": {
+      "description": "Fahrzeugtyp wie in der API",
+      "enum": ["MOTORCYCLE", "CAR", "BICYCLE", "E_BIKE", "QUAD", "SCOOTER"]
+    },
+    "make": { "type": "string", "minLength": 1 },
+    "model": { "type": "string", "minLength": 1 },
+    "aliases": {
+      "description": "Weitere Schreibweisen des Modells für die Suche",
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "years": {
+      "description": "Baujahre (Modelljahr), beide einschließlich; ohne 'to' bis heute",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from"],
+      "properties": {
+        "from": { "$ref": "#/$defs/year" },
+        "to": { "$ref": "#/$defs/year" }
+      }
+    },
+    "market": { "enum": ["EU"] },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/source" }
+    },
+    "tasks": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/task" }
+    },
+    "notes": { "$ref": "#/$defs/text" }
+  },
+  "$defs": {
+    "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "year": { "type": "integer", "minimum": 1950, "maximum": 2100 },
+    "text": {
+      "description": "Text auf Deutsch und Englisch",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["de", "en"],
+      "properties": {
+        "de": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "sourceRefs": {
+      "description": "IDs aus 'sources'",
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/slug" }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "title", "retrieved"],
+      "anyOf": [{ "required": ["url"] }, { "required": ["locator"] }],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "kind": {
+          "description": "MANUFACTURER bevorzugt; alle anderen gelten als zweitrangig",
+          "enum": ["MANUFACTURER", "DEALER", "PRESS", "REPAIR_PORTAL", "FORUM"]
+        },
+        "title": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "pattern": "^https://" },
+        "locator": { "description": "Fundstelle, z. B. Seite oder Abschnitt", "type": "string", "minLength": 1 },
+        "retrieved": { "description": "Abrufdatum", "type": "string", "format": "date" }
+      }
+    },
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["key", "sources"],
+      "properties": {
+        "key": { "description": "Schlüssel aus tasks.yaml", "$ref": "#/$defs/slug" },
+        "intervalKm": { "type": "integer", "minimum": 1 },
+        "intervalMonths": { "type": "integer", "minimum": 1 },
+        "firstDueKm": { "description": "Erste Fälligkeit bei diesem Kilometerstand", "type": "integer", "minimum": 1 },
+        "firstDueMonths": { "description": "Erste Fälligkeit nach so vielen Monaten", "type": "integer", "minimum": 1 },
+        "oneTime": { "description": "Nur einmal fällig (z. B. Einfahrinspektion)", "type": "boolean" },
+        "name": { "description": "Überschreibt den Namen aus tasks.yaml", "$ref": "#/$defs/text" },
+        "description": { "description": "Überschreibt die Beschreibung aus tasks.yaml", "$ref": "#/$defs/text" },
+        "details": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/detail" }
+        },
+        "plausibilityException": {
+          "description": "Begründung, warum ein Wert außerhalb der plausiblen Spanne aus tasks.yaml liegt",
+          "type": "string",
+          "minLength": 10
+        },
+        "sources": { "$ref": "#/$defs/sourceRefs" }
+      }
+    },
+    "detail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "value", "sources"],
+      "properties": {
+        "label": { "description": "Schlüssel aus 'details' in tasks.yaml", "$ref": "#/$defs/slug" },
+        "value": { "type": "string", "minLength": 1 },
+        "quantity": { "type": "string", "minLength": 1 },
+        "sources": { "$ref": "#/$defs/sourceRefs" }
+      }
+    }
+  }
+}

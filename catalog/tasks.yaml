@@ -1,0 +1,249 @@
+# yaml-language-server: $schema=../schema/tasks.schema.json
+#
+# Wörterbuch der Aufgaben: Name und Beschreibung je Schlüssel (Deutsch und Englisch, eigene Worte, nie aus einem
+# Handbuch übernommen). Eine Vorlage darf beides für ihre Aufgabe überschreiben.
+#
+# plausible: kleinster und größter plausibler Wert je Fahrzeugtyp, beide einschließlich. Das Prüfskript meldet Werte
+# außerhalb der Spanne; eine Vorlage kann sie mit `plausibilityException: <Begründung>` erlauben. Ohne Eintrag für
+# einen Typ wird nicht geprüft.
+
+tasks:
+  engine-oil:
+    name: { de: Motoröl wechseln, en: Change engine oil }
+    description:
+      de: Motoröl ablassen und neues Öl in der vorgeschriebenen Sorte und Menge einfüllen.
+      en: Drain the engine oil and fill in new oil of the specified grade and quantity.
+    plausible:
+      MOTORCYCLE: { intervalKm: [1000, 30000], intervalMonths: [6, 36] }
+      SCOOTER: { intervalKm: [1000, 20000], intervalMonths: [6, 36] }
+      QUAD: { intervalKm: [500, 20000], intervalMonths: [6, 36] }
+      CAR: { intervalKm: [5000, 50000], intervalMonths: [6, 36] }
+
+  oil-filter:
+    name: { de: Ölfilter wechseln, en: Replace oil filter }
+    description:
+      de: Ölfilter beim Ölwechsel erneuern.
+      en: Replace the oil filter during the oil change.
+    plausible:
+      MOTORCYCLE: { intervalKm: [1000, 40000], intervalMonths: [6, 48] }
+      SCOOTER: { intervalKm: [1000, 30000], intervalMonths: [6, 48] }
+      QUAD: { intervalKm: [500, 30000], intervalMonths: [6, 48] }
+      CAR: { intervalKm: [5000, 50000], intervalMonths: [6, 36] }
+
+  air-filter:
+    name: { de: Luftfilter wechseln, en: Replace air filter }
+    description:
+      de: Luftfiltereinsatz erneuern; bei staubigen Bedingungen öfter.
+      en: Replace the air filter element; more often in dusty conditions.
+    plausible:
+      MOTORCYCLE: { intervalKm: [5000, 80000], intervalMonths: [12, 72] }
+      SCOOTER: { intervalKm: [3000, 40000], intervalMonths: [12, 72] }
+      QUAD: { intervalKm: [1000, 40000], intervalMonths: [6, 72] }
+      CAR: { intervalKm: [15000, 120000], intervalMonths: [12, 96] }
+
+  spark-plugs:
+    name: { de: Zündkerzen wechseln, en: Replace spark plugs }
+    description:
+      de: Zündkerzen erneuern.
+      en: Replace the spark plugs.
+    plausible:
+      MOTORCYCLE: { intervalKm: [5000, 80000], intervalMonths: [12, 96] }
+      SCOOTER: { intervalKm: [3000, 40000], intervalMonths: [12, 96] }
+      QUAD: { intervalKm: [2000, 40000], intervalMonths: [12, 96] }
+      CAR: { intervalKm: [20000, 150000], intervalMonths: [24, 144] }
+
+  valve-clearance:
+    name: { de: Ventilspiel prüfen, en: Check valve clearance }
+    description:
+      de: Ventilspiel messen und bei Bedarf einstellen.
+      en: Measure the valve clearance and adjust it if necessary.
+    plausible:
+      MOTORCYCLE: { intervalKm: [5000, 100000], intervalMonths: [12, 120] }
+      SCOOTER: { intervalKm: [3000, 50000], intervalMonths: [12, 120] }
+      QUAD: { intervalKm: [2000, 50000], intervalMonths: [12, 120] }
+
+  brake-fluid:
+    name: { de: Bremsflüssigkeit wechseln, en: Change brake fluid }
+    description:
+      de: Bremsflüssigkeit vorn und hinten erneuern und die Bremsen entlüften.
+      en: Replace the front and rear brake fluid and bleed the brakes.
+    plausible:
+      MOTORCYCLE: { intervalKm: [5000, 60000], intervalMonths: [12, 48] }
+      SCOOTER: { intervalKm: [5000, 60000], intervalMonths: [12, 48] }
+      QUAD: { intervalKm: [2000, 60000], intervalMonths: [12, 48] }
+      CAR: { intervalKm: [10000, 120000], intervalMonths: [12, 48] }
+
+  clutch-fluid:
+    name: { de: Kupplungsflüssigkeit wechseln, en: Change clutch fluid }
+    description:
+      de: Flüssigkeit der hydraulischen Kupplung erneuern und entlüften.
+      en: Replace the hydraulic clutch fluid and bleed the system.
+    plausible:
+      MOTORCYCLE: { intervalKm: [5000, 60000], intervalMonths: [12, 48] }
+
+  coolant:
+    name: { de: Kühlmittel wechseln, en: Change coolant }
+    description:
+      de: Kühlmittel ablassen und neues Kühlmittel einfüllen.
+      en: Drain the coolant and fill in new coolant.
+    plausible:
+      MOTORCYCLE: { intervalKm: [10000, 120000], intervalMonths: [12, 96] }
+      SCOOTER: { intervalKm: [10000, 120000], intervalMonths: [12, 96] }
+      QUAD: { intervalKm: [5000, 120000], intervalMonths: [12, 96] }
+      CAR: { intervalKm: [30000, 250000], intervalMonths: [24, 144] }
+
+  drive-chain-lube:
+    name: { de: Antriebskette reinigen und schmieren, en: Clean and lubricate drive chain }
+    description:
+      de: Antriebskette reinigen und mit Kettenspray oder -öl schmieren; nach Regenfahrten zusätzlich.
+      en: Clean the drive chain and lubricate it with chain spray or oil; also after riding in the rain.
+    plausible:
+      MOTORCYCLE: { intervalKm: [300, 2000], intervalMonths: [1, 12] }
+      QUAD: { intervalKm: [100, 2000], intervalMonths: [1, 12] }
+      BICYCLE: { intervalKm: [100, 1000], intervalMonths: [1, 12] }
+      E_BIKE: { intervalKm: [100, 1000], intervalMonths: [1, 12] }
+
+  drive-chain-check:
+    name: { de: Antriebskette prüfen und spannen, en: Check and adjust drive chain }
+    description:
+      de: Durchhang und Verschleiß von Kette und Kettenrädern prüfen, Kette bei Bedarf spannen.
+      en: Check the slack and wear of chain and sprockets, adjust the chain if necessary.
+    plausible:
+      MOTORCYCLE: { intervalKm: [500, 12000], intervalMonths: [1, 24] }
+      QUAD: { intervalKm: [200, 12000], intervalMonths: [1, 24] }
+
+  final-drive-oil:
+    name: { de: Öl im Hinterradantrieb wechseln, en: Change final drive oil }
+    description:
+      de: Öl im Hinterradantrieb (Kardan) ablassen und neu einfüllen.
+      en: Drain and refill the oil in the final drive (shaft drive).
+    plausible:
+      MOTORCYCLE: { intervalKm: [10000, 80000], intervalMonths: [12, 72] }
+
+  drive-shaft-check:
+    name: { de: Kardanwelle prüfen und schmieren, en: Inspect and lubricate drive shaft }
+    description:
+      de: Kardanwelle auf Schäden sichtprüfen und die Schmierstellen schmieren.
+      en: Visually inspect the drive shaft for damage and lubricate its grease points.
+    plausible:
+      MOTORCYCLE: { intervalKm: [5000, 60000], intervalMonths: [12, 72] }
+
+  drive-shaft:
+    name: { de: Kardanwelle ersetzen, en: Replace drive shaft }
+    description:
+      de: Kardanwelle nach der vorgeschriebenen Laufleistung erneuern.
+      en: Replace the drive shaft after the specified mileage.
+    plausible:
+      MOTORCYCLE: { intervalKm: [40000, 200000] }
+
+  gear-oil:
+    name: { de: Getriebeöl wechseln, en: Change gear oil }
+    description:
+      de: Öl im Getriebe bzw. Hinterradgetriebe ablassen und neu einfüllen.
+      en: Drain and refill the oil in the gearbox or rear gear case.
+    plausible:
+      MOTORCYCLE: { intervalKm: [3000, 60000], intervalMonths: [12, 72] }
+      SCOOTER: { intervalKm: [3000, 40000], intervalMonths: [12, 72] }
+      QUAD: { intervalKm: [1000, 40000], intervalMonths: [12, 72] }
+      CAR: { intervalKm: [30000, 250000], intervalMonths: [24, 180] }
+
+  cvt-belt:
+    name: { de: Keilriemen wechseln, en: Replace drive belt (CVT) }
+    description:
+      de: Antriebsriemen des Variomatik-Getriebes erneuern.
+      en: Replace the drive belt of the continuously variable transmission.
+    plausible:
+      SCOOTER: { intervalKm: [5000, 50000], intervalMonths: [12, 96] }
+      QUAD: { intervalKm: [2000, 30000], intervalMonths: [12, 96] }
+
+  timing-belt:
+    name: { de: Zahnriemen wechseln, en: Replace timing belt }
+    description:
+      de: Zahnriemen der Nockenwellen erneuern.
+      en: Replace the camshaft timing belt.
+    plausible:
+      MOTORCYCLE: { intervalKm: [10000, 60000], intervalMonths: [24, 72] }
+      CAR: { intervalKm: [60000, 300000], intervalMonths: [48, 180] }
+
+  fork-oil:
+    name: { de: Gabelöl wechseln, en: Change fork oil }
+    description:
+      de: Öl der Telegabel ablassen und neu einfüllen.
+      en: Drain and refill the oil of the telescopic fork.
+    plausible:
+      MOTORCYCLE: { intervalKm: [10000, 100000], intervalMonths: [12, 96] }
+      BICYCLE: { intervalKm: [1000, 20000], intervalMonths: [6, 48] }
+      E_BIKE: { intervalKm: [1000, 20000], intervalMonths: [6, 48] }
+
+  brake-pads-check:
+    name: { de: Bremsbeläge prüfen, en: Check brake pads }
+    description:
+      de: Belagstärke vorn und hinten prüfen, Beläge bei Bedarf erneuern.
+      en: Check the pad thickness front and rear, replace the pads if necessary.
+    plausible:
+      MOTORCYCLE: { intervalKm: [1000, 20000], intervalMonths: [6, 24] }
+      SCOOTER: { intervalKm: [1000, 20000], intervalMonths: [6, 24] }
+      QUAD: { intervalKm: [500, 20000], intervalMonths: [6, 24] }
+      CAR: { intervalKm: [10000, 60000], intervalMonths: [12, 36] }
+      BICYCLE: { intervalKm: [500, 5000], intervalMonths: [3, 24] }
+      E_BIKE: { intervalKm: [500, 5000], intervalMonths: [3, 24] }
+
+  steering-head-bearing:
+    name: { de: Lenkkopflager prüfen, en: Check steering head bearing }
+    description:
+      de: Spiel und Leichtgängigkeit des Lenkkopflagers prüfen, bei Bedarf einstellen.
+      en: Check the steering head bearing for play and smooth movement, adjust if necessary.
+    plausible:
+      MOTORCYCLE: { intervalKm: [5000, 60000], intervalMonths: [12, 48] }
+
+  throttle-body-sync:
+    name: { de: Drosselklappen synchronisieren, en: Synchronise throttle bodies }
+    description:
+      de: Drosselklappen der Zylinder aufeinander abstimmen.
+      en: Balance the throttle bodies of the cylinders.
+    plausible:
+      MOTORCYCLE: { intervalKm: [6000, 60000], intervalMonths: [12, 72] }
+
+  fuel-filter:
+    name: { de: Kraftstofffilter wechseln, en: Replace fuel filter }
+    description:
+      de: Kraftstofffilter erneuern.
+      en: Replace the fuel filter.
+    plausible:
+      MOTORCYCLE: { intervalKm: [10000, 100000], intervalMonths: [12, 120] }
+      CAR: { intervalKm: [20000, 200000], intervalMonths: [24, 144] }
+
+  cabin-filter:
+    name: { de: Innenraumfilter wechseln, en: Replace cabin filter }
+    description:
+      de: Pollen- bzw. Innenraumfilter erneuern.
+      en: Replace the pollen or cabin filter.
+    plausible:
+      CAR: { intervalKm: [10000, 60000], intervalMonths: [12, 36] }
+
+  inspection:
+    name: { de: Inspektion, en: Service inspection }
+    description:
+      de: Regelmäßige Inspektion mit allen Prüfpunkten des Wartungsplans (Bremsen, Reifen, Beleuchtung, Schraubverbindungen usw.).
+      en: Regular service inspection with all check items of the maintenance schedule (brakes, tyres, lights, fasteners etc.).
+    plausible:
+      MOTORCYCLE: { intervalKm: [1000, 30000], intervalMonths: [6, 36] }
+      SCOOTER: { intervalKm: [1000, 20000], intervalMonths: [6, 36] }
+      QUAD: { intervalKm: [500, 20000], intervalMonths: [6, 36] }
+      CAR: { intervalKm: [10000, 60000], intervalMonths: [12, 36] }
+      BICYCLE: { intervalKm: [500, 10000], intervalMonths: [6, 24] }
+      E_BIKE: { intervalKm: [500, 10000], intervalMonths: [6, 24] }
+
+# Bezeichnungen der Details (Sorte, Teil, Einstellwert) einer Aufgabe.
+details:
+  oil: { de: Öl, en: Oil }
+  filter: { de: Filter, en: Filter }
+  spark-plug: { de: Zündkerze, en: Spark plug }
+  electrode-gap: { de: Elektrodenabstand, en: Electrode gap }
+  fluid: { de: Flüssigkeit, en: Fluid }
+  coolant: { de: Kühlmittel, en: Coolant }
+  clearance-intake: { de: Ventilspiel Einlass, en: Valve clearance intake }
+  clearance-exhaust: { de: Ventilspiel Auslass, en: Valve clearance exhaust }
+  chain-slack: { de: Kettendurchhang, en: Chain slack }
+  chain-lube: { de: Kettenschmiermittel, en: Chain lubricant }
+  part: { de: Teil, en: Part }

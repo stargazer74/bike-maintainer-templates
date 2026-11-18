@@ -1,0 +1,38 @@
+# Opened by the "Fehler melden" link in the web and Android apps, pre-filled via URL parameters with the field ids
+# below (?template=fehler-in-vorlage.yml&vorlage=<id>&aufgabe=<key>). Contains no account data.
+name: Fehler in einer Vorlage melden
+description: Ein Wert in einem Wartungsplan stimmt nicht mit dem Handbuch überein, oder eine Quelle ist falsch.
+title: "Fehler in Vorlage: "
+labels: [fehler-in-vorlage]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke! Bitte nenne, was nicht stimmt und wo der richtige Wert steht. Lade **keine Seiten oder PDFs aus
+        Handbüchern** hoch, sondern nenne Titel, Seite und – wenn öffentlich – einen Link.
+  - type: input
+    id: vorlage
+    attributes:
+      label: Vorlage
+      description: ID der Vorlage, z. B. honda-cb650r-2019
+    validations:
+      required: true
+  - type: input
+    id: aufgabe
+    attributes:
+      label: Aufgabe
+      description: z. B. engine-oil oder „Motoröl wechseln“
+  - type: textarea
+    id: fehler
+    attributes:
+      label: Was stimmt nicht?
+      description: Welcher Wert steht in der Vorlage, welcher wäre richtig?
+    validations:
+      required: true
+  - type: textarea
+    id: quelle
+    attributes:
+      label: Quelle für den richtigen Wert
+      description: Titel, Seite oder Abschnitt, Link (falls öffentlich)
+    validations:
+      required: true
