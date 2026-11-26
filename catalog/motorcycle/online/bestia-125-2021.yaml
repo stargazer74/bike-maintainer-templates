@@ -1,0 +1,62 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: online-bestia-125-2021
+type: MOTORCYCLE
+make: Online
+model: Bestia 125
+aliases: [Bestia125, Bestia]
+years: { from: 2021, to: 2021 }
+market: EU
+sources:
+  - id: wh
+    kind: MANUFACTURER
+    title: Online Bestia 125 Wartungshandbuch des Herstellers (gedruckt)
+    locator: Wartungsplan
+    retrieved: 2026-11-26
+tasks:
+  - key: engine-oil
+    intervalKm: 4000
+    intervalMonths: 12
+    sources: [wh]
+  - key: oil-filter
+    intervalKm: 4000
+    intervalMonths: 12
+    sources: [wh]
+  - key: air-filter
+    intervalKm: 8000
+    intervalMonths: 24
+    sources: [wh]
+  - key: spark-plugs
+    intervalKm: 4000
+    intervalMonths: 12
+    sources: [wh]
+    plausibilityException: Herstellerangabe – Zündkerze bei jeder Inspektion (alle 4.000 km) ersetzen.
+  - key: valve-clearance
+    intervalKm: 4000
+    intervalMonths: 12
+    sources: [wh]
+    plausibilityException: Herstellerangabe – Ventilspiel bei jeder Inspektion (alle 4.000 km) prüfen.
+  - key: brake-fluid
+    intervalKm: 4000
+    intervalMonths: 12
+    sources: [wh]
+    plausibilityException: Herstellerangabe – Bremsflüssigkeit bei jeder Inspektion (alle 4.000 km bzw. jährlich) ersetzen.
+  - key: fork-oil
+    intervalKm: 8000
+    intervalMonths: 24
+    sources: [wh]
+    plausibilityException: Herstellerangabe – Gabelöl bei jeder zweiten Inspektion (alle 8.000 km) ersetzen.
+  - key: drive-chain-check
+    intervalKm: 4000
+    intervalMonths: 12
+    sources: [wh]
+  - key: brake-pads-check
+    intervalKm: 4000
+    intervalMonths: 12
+    sources: [wh]
+  - key: inspection
+    intervalKm: 4000
+    intervalMonths: 12
+    sources: [wh]
+notes:
+  de: "Zur Inspektion (alle 4.000 km oder jährlich) gehören laut Wartungsplan außerdem: Luftfilter, Kühlflüssigkeit und Kühlsystem, Kraftstofffilter und -leitungen, Bremsschläuche und Bremssystem, Bowdenzüge, Kupplungsspiel, Federung und Gabel, Räder, Reifen und Radlager, Schwingenlager, Batterie und elektrische Anlage prüfen, Fehlerspeicher auslesen, Schrauben und Befestigungen prüfen, Probefahrt."
+  en: "According to the maintenance schedule, the inspection (every 4,000 km or yearly) also covers: check the air filter, coolant and cooling system, fuel filter and lines, brake hoses and brake system, cables, clutch play, suspension and fork, wheels, tyres and wheel bearings, swingarm bearings, battery and electrics, read the fault memory, check bolts and fasteners, test ride."
