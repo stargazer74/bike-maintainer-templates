@@ -238,6 +238,17 @@ tasks:
     plausible:
       CAR: { intervalKm: [10000, 60000], intervalMonths: [12, 36] }
 
+  battery-check:
+    name: { de: Batterie prüfen, en: Check battery }
+    description:
+      de: Ladezustand, Pole und Befestigung der Batterie prüfen; bei Bedarf laden, reinigen oder ersetzen.
+      en: Check the battery's charge, terminals and mounting; charge, clean or replace it if necessary.
+    plausible:
+      MOTORCYCLE: { intervalKm: [1000, 30000], intervalMonths: [3, 24] }
+      SCOOTER: { intervalKm: [1000, 20000], intervalMonths: [3, 24] }
+      QUAD: { intervalKm: [500, 20000], intervalMonths: [3, 24] }
+      CAR: { intervalKm: [10000, 60000], intervalMonths: [12, 36] }
+
   inspection:
     name: { de: Inspektion, en: Service inspection }
     description:
