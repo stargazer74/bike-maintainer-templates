@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=../../../schema/template.schema.json
+id: kawasaki-vn800-1996
+type: MOTORCYCLE
+make: Kawasaki
+model: VN800
+aliases: [VN 800, VN-800, Vulcan 800, VN800 Vulcan, VN800A]
+years: { from: 1996, to: 1996 }
+market: EU
+sources:
+  - id: om-1996
+    kind: MANUFACTURER
+    title: Kawasaki VN800 Fahrerhandbuch, Ergänzung Modell 1996, Ausgabe außer US- und Kanada-Modelle (gedruckt)
+    locator: "S. 6, Wartungstabelle"
+    retrieved: 2026-11-26
+tasks:
+  - key: engine-oil
+    intervalKm: 6000
+    intervalMonths: 6
+    firstDueKm: 1000
+    sources: [om-1996]
+  - key: oil-filter
+    intervalKm: 12000
+    firstDueKm: 1000
+    sources: [om-1996]
+  - key: spark-plugs
+    intervalKm: 6000
+    sources: [om-1996]
+    name: { de: Zündkerzen reinigen und Elektrodenabstand einstellen, en: Clean spark plugs and set the gap }
+    description:
+      de: Zündkerzen ausbauen, reinigen, Elektrodenabstand prüfen und einstellen; verschlissene Kerzen ersetzen.
+      en: Remove and clean the spark plugs, check and set the electrode gap; replace worn plugs.
+  - key: valve-clearance
+    intervalKm: 12000
+    sources: [om-1996]
+  - key: air-filter
+    intervalKm: 12000
+    sources: [om-1996]
+    name: { de: Luftfiltereinsatz reinigen, en: Clean air filter element }
+    description:
+      de: Luftfiltereinsatz ausbauen und reinigen; bei Beschädigung ersetzen. Bei Staub öfter.
+      en: Remove and clean the air filter element; replace it if damaged. More often in dusty conditions.
+  - key: coolant
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [om-1996]
+  - key: brake-fluid
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [om-1996]
+  - key: fork-oil
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [om-1996]
+  - key: steering-head-bearing
+    intervalKm: 24000
+    intervalMonths: 24
+    sources: [om-1996]
+    name: { de: Lenkkopflager schmieren, en: Lubricate steering head bearing }
+    description:
+      de: Lenkkopflager ausbauen, reinigen und neu fetten; Lagerspiel einstellen.
+      en: Remove, clean and regrease the steering head bearing; adjust the bearing play.
+  - key: drive-chain-lube
+    intervalKm: 600
+    sources: [om-1996]
+  - key: drive-chain-check
+    intervalKm: 1000
+    sources: [om-1996]
+  - key: brake-pads-check
+    intervalKm: 6000
+    sources: [om-1996]
+  - key: inspection
+    intervalKm: 6000
+    firstDueKm: 1000
+    sources: [om-1996]
+notes:
+  de: "Zur Inspektion (ab 1.000 km, dann alle 6.000 km) gehören laut Wartungstabelle: Kupplung einstellen, Bremsflüssigkeitsstand, Bremsenspiel, Bremslichtschalter und Lenkung prüfen. Ab 6.000 km alle 6.000 km außerdem: Luftansaugventil, Kettenverschleiß, Speichen und Felgen prüfen, Schwingenlager schmieren. Ab 1.000 km, dann alle 12.000 km: Gasdrehgriffspiel und Leerlaufdrehzahl einstellen, Muttern und Schrauben auf festen Sitz prüfen. Alle 12.000 km: Stoßdämpfer und Gabel auf Dichtheit, Reifenverschleiß prüfen, allgemein abschmieren. Bremsflüssigkeitsstand zusätzlich monatlich prüfen. Kühlerschläuche bei 1.000 km prüfen. Bremszug alle 2 Jahre bzw. 24.000 km ersetzen; Manschetten und Staubschutz von Hauptbremszylinder und Bremssattel alle 4 Jahre ersetzen. Nach 36.000 km wiederholt sich der Plan."
+  en: "According to the maintenance chart, the inspection (from 1,000 km, then every 6,000 km) covers: adjust the clutch, check brake fluid level, brake play, brake light switch and steering. From 6,000 km every 6,000 km also: check the air suction valve, chain wear, spokes and rims, lubricate the swingarm pivot. From 1,000 km, then every 12,000 km: adjust throttle grip play and idle speed, check nuts and bolts for tightness. Every 12,000 km: check shock absorber and fork for leaks and tyre wear, general lubrication. Also check the brake fluid level monthly. Check the radiator hoses at 1,000 km. Replace the brake cable every 2 years or 24,000 km; replace the master cylinder and caliper cups/seals and dust covers every 4 years. After 36,000 km the schedule repeats."
