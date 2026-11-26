@@ -3,8 +3,8 @@ id: kawasaki-vn800-1996
 type: MOTORCYCLE
 make: Kawasaki
 model: VN800
-aliases: [VN 800, VN-800, Vulcan 800, VN800 Vulcan, VN800A]
-years: { from: 1996, to: 1996 }
+aliases: [VN 800, VN-800, Vulcan 800, VN800 Vulcan, VN800A, VN800 Classic, VN800B, Vulcan 800 Classic]
+years: { from: 1996, to: 2005 }
 market: EU
 sources:
   - id: om-1996
