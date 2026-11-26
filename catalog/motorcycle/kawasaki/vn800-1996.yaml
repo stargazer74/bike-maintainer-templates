@@ -10,7 +10,7 @@ sources:
   - id: om-1996
     kind: MANUFACTURER
     title: Kawasaki VN800 Fahrerhandbuch, Ergänzung Modell 1996, Ausgabe außer US- und Kanada-Modelle (gedruckt)
-    locator: "S. 6, Wartungstabelle"
+    locator: "S. 6, Wartungstabelle; Ventilspiel und Batterie im selben Heft"
     retrieved: 2026-11-26
 tasks:
   - key: engine-oil
@@ -32,6 +32,9 @@ tasks:
   - key: valve-clearance
     intervalKm: 12000
     sources: [om-1996]
+    details:
+      - { label: clearance-intake, value: "0,10–0,15 mm", sources: [om-1996] }
+      - { label: clearance-exhaust, value: "0,25–0,30 mm", sources: [om-1996] }
   - key: air-filter
     intervalKm: 12000
     sources: [om-1996]
@@ -67,6 +70,10 @@ tasks:
     sources: [om-1996]
   - key: brake-pads-check
     intervalKm: 6000
+    sources: [om-1996]
+  - key: battery-check
+    intervalKm: 6000
+    intervalMonths: 12
     sources: [om-1996]
   - key: inspection
     intervalKm: 6000
